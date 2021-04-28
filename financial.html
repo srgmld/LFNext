@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>financial.utf8</title>
+
+<script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="site_libs/jquery-3.5.0/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<script src="site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="site_libs/proj4js-2.3.15/proj4.js"></script>
+<link href="site_libs/highcharts-8.1.2/css/motion.css" rel="stylesheet" />
+<script src="site_libs/highcharts-8.1.2/highcharts.js"></script>
+<script src="site_libs/highcharts-8.1.2/highcharts-3d.js"></script>
+<script src="site_libs/highcharts-8.1.2/highcharts-more.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/stock.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/map.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/annotations.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/data.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/drilldown.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/item-series.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/offline-exporting.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/overlapping-datalabels.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/exporting.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/export-data.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/funnel.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/heatmap.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/treemap.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/sankey.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/dependency-wheel.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/organization.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/solid-gauge.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/streamgraph.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/sunburst.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/vector.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/wordcloud.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/xrange.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/tilemap.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/venn.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/gantt.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/timeline.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/parallel-coordinates.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/bullet.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/coloraxis.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/dumbbell.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/lollipop.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/series-label.js"></script>
+<script src="site_libs/highcharts-8.1.2/plugins/motion.js"></script>
+<script src="site_libs/highcharts-8.1.2/custom/reset.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/boost.js"></script>
+<script src="site_libs/highchart-binding-0.8.2.9000/highchart.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">My Website</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Current Situation</a>
+</li>
+<li>
+  <a href="quarter_rev.html">Quarter Review</a>
+</li>
+<li>
+  <a href="financial.html">Financial Indicators</a>
+</li>
+<li>
+  <a href="social.html">Social Performance</a>
+</li>
+<li>
+  <a href="statements.html">Financial Statements</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<div id="financial-indicators-usd" class="section level2">
+<h2>FINANCIAL INDICATORS (USD)</h2>
+<div class="row">
+<div id="balance-sheet-usd" class="section level3 col-md-6">
+<h3>BALANCE SHEET USD</h3>
+<table class="table lightable-classic" style="margin-left: auto; margin-right: auto; font-family: Helvetica; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+BALANCE SHEET
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Variable
+</th>
+<th style="text-align:left;">
+Total
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Cash and cash equivalent
+</td>
+<td style="text-align:left;">
+8,774,368
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Portfolio
+</td>
+<td style="text-align:left;">
+71,523,704
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 4em;" indentlevel="1">
+Capital Markets
+</td>
+<td style="text-align:left;">
+4,062,076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 4em;" indentlevel="1">
+Loans Receivable
+</td>
+<td style="text-align:left;">
+59,871,457
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 4em;" indentlevel="1">
+Promissory Notes
+</td>
+<td style="text-align:left;">
+7,590,171
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Hedged Assets
+</td>
+<td style="text-align:left;">
+2,500,000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+Total Assets
+</td>
+<td style="text-align:left;font-weight: bold;">
+82,721,588
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Long Term Liabilities
+</td>
+<td style="text-align:left;">
+17,970,589
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Short Term Liabilities
+</td>
+<td style="text-align:left;">
+26,902,005
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+Total Liabilities
+</td>
+<td style="text-align:left;font-weight: bold;">
+44,872,594
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Capital
+</td>
+<td style="text-align:left;">
+31,100,000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Reserve for Currency Loss
+</td>
+<td style="text-align:left;">
+523,400
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+Total Equity
+</td>
+<td style="text-align:left;font-weight: bold;">
+37,848,991
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="profitloss-summary" class="section level3 col-md-6">
+<h3>PROFIT/LOSS SUMMARY</h3>
+<table class="table lightable-classic" style="width: auto !important; margin-left: auto; margin-right: auto; font-family: Helvetica; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+PROFIT/LOSS USD
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Variable
+</th>
+<th style="text-align:left;">
+March
+</th>
+<th style="text-align:left;">
+Total
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;padding-left: 4em;" indentlevel="1">
+Loans Interests
+</td>
+<td style="text-align:left;">
+619,029
+</td>
+<td style="text-align:left;">
+6,225,711
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 2em;" indentlevel="1">
+Total Income
+</td>
+<td style="text-align:left;font-weight: bold;">
+619,029
+</td>
+<td style="text-align:left;font-weight: bold;">
+6,225,711
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 4em;" indentlevel="1">
+Management Fees
+</td>
+<td style="text-align:left;">
+-112,897
+</td>
+<td style="text-align:left;">
+-1,203,992
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 4em;" indentlevel="1">
+Senior Loans Interests
+</td>
+<td style="text-align:left;">
+-207,897
+</td>
+<td style="text-align:left;">
+-1,786,077
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 4em;" indentlevel="1">
+Others
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+-5,500
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 2em;" indentlevel="1">
+Total Expenses
+</td>
+<td style="text-align:left;font-weight: bold;">
+-332,231
+</td>
+<td style="text-align:left;font-weight: bold;">
+-3,132,520
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+Profit/Loss before provisions
+</td>
+<td style="text-align:left;font-weight: bold;">
+286,799
+</td>
+<td style="text-align:left;font-weight: bold;">
+3,093,197
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Bad Loans Provisions
+</td>
+<td style="text-align:left;">
+26,692
+</td>
+<td style="text-align:left;">
+-205,826
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+TSF Expenses
+</td>
+<td style="text-align:left;">
+-5,607
+</td>
+<td style="text-align:left;">
+-134,063
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+TSF Income
+</td>
+<td style="text-align:left;">
+5,607
+</td>
+<td style="text-align:left;">
+134,063
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+Profit/Loss after provisions
+</td>
+<td style="text-align:left;font-weight: bold;">
+313,490
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,887,369
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Exchange Rate Difference
+</td>
+<td style="text-align:left;">
+-1,238,006
+</td>
+<td style="text-align:left;">
+-1,422,901
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+Profit/Loss after FX
+</td>
+<td style="text-align:left;font-weight: bold;">
+-924,516
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,464,467
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
+<hr>
+<div class="row">
+<div class="col-md-6">
+<ul>
+<li>Despite a large amount of debt installments in 2020, the fund was able to maintain high liquidity figures as of December. During 2021, it is expected that the fund will realize installments for approximately USD 18.8MM, and also, equity and dividend distributions for USD 20MM.</li>
+</ul>
+</div>
+<div class="col-md-6">
+<ul>
+<li>As of December 2020, the currencies that showed recovery from September 2020 are COP (USD 375k) and MXN (USD 234k).</li>
+</ul>
+</div>
+</div>
+<p><a id="mfi_disb"></a></p>
+</div>
+<div id="mfi-distribution-mm-usd" class="section level2">
+<h2>MFI DISTRIBUTION (MM USD)</h2>
+<div id="htmlwidget-6058c325159719e40de3" style="width:100%;height:650px;" class="highchart html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6058c325159719e40de3">{"x":{"hc_opts":{"chart":{"reflow":true,"style":{"fontFamily":"Open Sans"},"height":650},"title":{"text":"Hover your mouse over the bars to get more information"},"yAxis":{"title":{"text":""},"type":"linear"},"credits":{"enabled":false},"exporting":{"enabled":false},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0,"showInLegend":false},"treemap":{"layoutAlgorithm":"squarified"},"scatter":{"marker":{"symbol":"circle"}},"bar":{"states":{"hover":{"color":"#D8FFD9"}},"dataLabels":{"enabled":false,"style":{"fontSize":"13px","textOutline":false,"color":"white","fontFamily":"Open Sans"}}}},"series":[{"group":"group","data":[{"country":"Ecuador","entity_hom":"ESPOIR","operations":9,"total":5.97,"principal":5.9,"accrued_interest":0.07,"y":5.97,"name":"ESPOIR"},{"country":"Guatemala","entity_hom":"GENESIS","operations":3,"total":5.11,"principal":5.02,"accrued_interest":0.09,"y":5.11,"name":"GENESIS"},{"country":"Ecuador","entity_hom":"INSOTEC","operations":6,"total":4.78,"principal":4.75,"accrued_interest":0.03,"y":4.78,"name":"INSOTEC"},{"country":"Bolivia","entity_hom":"PRO MUJER - BOL","operations":2,"total":4.06,"principal":3.98,"accrued_interest":0.08,"y":4.06,"name":"PRO MUJER - BOL"},{"country":"Ecuador","entity_hom":"FACES","operations":5,"total":3.72,"principal":3.64,"accrued_interest":0.08,"y":3.72,"name":"FACES"},{"country":"Peru","entity_hom":"EDPYME ALTERNATIVA","operations":4,"total":3.71,"principal":3.65,"accrued_interest":0.06,"y":3.71,"name":"EDPYME ALTERNATIVA"},{"country":"Honduras","entity_hom":"IDH","operations":6,"total":3.26,"principal":3.19,"accrued_interest":0.07,"y":3.26,"name":"IDH"},{"country":"El Salvador","entity_hom":"AMC","operations":1,"total":3.19,"principal":3.19,"accrued_interest":0.01,"y":3.19,"name":"AMC"},{"country":"Colombia","entity_hom":"CONTACTAR","operations":9,"total":3.17,"principal":3.13,"accrued_interest":0.03,"y":3.17,"name":"CONTACTAR"},{"country":"El Salvador","entity_hom":"APOYO INTEGRAL","operations":3,"total":3.06,"principal":3.04,"accrued_interest":0.03,"y":3.06,"name":"APOYO INTEGRAL"},{"country":"Panama","entity_hom":"CFE","operations":2,"total":3.01,"principal":2.99,"accrued_interest":0.02,"y":3.01,"name":"CFE"},{"country":"Nicaragua","entity_hom":"PRO MUJER - NIC","operations":5,"total":2.18,"principal":2.13,"accrued_interest":0.04,"y":2.18,"name":"PRO MUJER - NIC"},{"country":"Honduras","entity_hom":"BANCO POPULAR","operations":2,"total":2.11,"principal":2.06,"accrued_interest":0.05,"y":2.11,"name":"BANCO POPULAR"},{"country":"Paraguay","entity_hom":"F. PARAGUAYA","operations":1,"total":1.98,"principal":1.95,"accrued_interest":0.03,"y":1.98,"name":"F. PARAGUAYA"},{"country":"El Salvador","entity_hom":"OPTIMA","operations":1,"total":1.53,"principal":1.5,"accrued_interest":0.03,"y":1.53,"name":"OPTIMA"},{"country":"Bolivia","entity_hom":"DIACONIA","operations":2,"total":1.52,"principal":1.5,"accrued_interest":0.02,"y":1.52,"name":"DIACONIA"},{"country":"Guatemala","entity_hom":"FAFIDESS","operations":4,"total":1.42,"principal":1.41,"accrued_interest":0.02,"y":1.42,"name":"FAFIDESS"},{"country":"Ecuador","entity_hom":"D MIRO","operations":1,"total":1.34,"principal":1.33,"accrued_interest":0.01,"y":1.34,"name":"D MIRO"},{"country":"El Salvador","entity_hom":"PADECOMSMCREDITO","operations":3,"total":1.26,"principal":1.24,"accrued_interest":0.01,"y":1.26,"name":"PADECOMSMCREDITO"},{"country":"Peru","entity_hom":"ARARIWA","operations":3,"total":1.25,"principal":1.22,"accrued_interest":0.02,"y":1.25,"name":"ARARIWA"},{"country":"Honduras","entity_hom":"ODEF","operations":1,"total":1.22,"principal":1.19,"accrued_interest":0.04,"y":1.22,"name":"ODEF"},{"country":"Bolivia","entity_hom":"SARTAWI","operations":1,"total":1.21,"principal":1.2,"accrued_interest":0.01,"y":1.21,"name":"SARTAWI"},{"country":"Nicaragua","entity_hom":"MICREDITO","operations":1,"total":1.13,"principal":1.12,"accrued_interest":0.01,"y":1.13,"name":"MICREDITO"},{"country":"Mexico","entity_hom":"VISION FUND","operations":3,"total":1.05,"principal":1.03,"accrued_interest":0.02,"y":1.05,"name":"VISION FUND"},{"country":"El Salvador","entity_hom":"ASEI","operations":6,"total":0.83,"principal":0.82,"accrued_interest":0.01,"y":0.83,"name":"ASEI"},{"country":"Panama","entity_hom":"PROCAJA","operations":4,"total":0.75,"principal":0.74,"accrued_interest":0.01,"y":0.75,"name":"PROCAJA"},{"country":"Mexico","entity_hom":"SOFIPA","operations":2,"total":0.73,"principal":0.71,"accrued_interest":0.02,"y":0.73,"name":"SOFIPA"},{"country":"Nicaragua","entity_hom":"FDL","operations":2,"total":0.69,"principal":0.68,"accrued_interest":0.01,"y":0.69,"name":"FDL"},{"country":"El Salvador","entity_hom":"CREDICAMPO","operations":2,"total":0.68,"principal":0.68,"accrued_interest":0.01,"y":0.68,"name":"CREDICAMPO"},{"country":"Panama","entity_hom":"MICROSERFIN","operations":1,"total":0.64,"principal":0.64,"accrued_interest":0,"y":0.64,"name":"MICROSERFIN"},{"country":"Mexico","entity_hom":"MASKAPITAL","operations":3,"total":0.63,"principal":0.62,"accrued_interest":0.01,"y":0.63,"name":"MASKAPITAL"},{"country":"Bolivia","entity_hom":"IDEPRO","operations":1,"total":0.6,"principal":0.59,"accrued_interest":0,"y":0.6,"name":"IDEPRO"},{"country":"Republica Dominicana","entity_hom":"ASPIRE","operations":1,"total":0.52,"principal":0.51,"accrued_interest":0.01,"y":0.52,"name":"ASPIRE"},{"country":"Republica Dominicana","entity_hom":"FDD","operations":1,"total":0.51,"principal":0.5,"accrued_interest":0,"y":0.51,"name":"FDD"},{"country":"Honduras","entity_hom":"AMC - HON","operations":1,"total":0.5,"principal":0.49,"accrued_interest":0.01,"y":0.5,"name":"AMC - HON"},{"country":"Honduras","entity_hom":"PRISMA","operations":1,"total":0.35,"principal":0.34,"accrued_interest":0.01,"y":0.35,"name":"PRISMA"},{"country":"Mexico","entity_hom":"EQUIPATE","operations":1,"total":0.35,"principal":0.34,"accrued_interest":0.01,"y":0.35,"name":"EQUIPATE"},{"country":"Honduras","entity_hom":"AHSETFIN","operations":1,"total":0.31,"principal":0.29,"accrued_interest":0.01,"y":0.31,"name":"AHSETFIN"},{"country":"Guatemala","entity_hom":"ADICLA","operations":1,"total":0.3,"principal":0.3,"accrued_interest":0.01,"y":0.3,"name":"ADICLA"},{"country":"Guatemala","entity_hom":"ADISA","operations":1,"total":0.27,"principal":0.27,"accrued_interest":0.01,"y":0.27,"name":"ADISA"},{"country":"Bolivia","entity_hom":"IMPRO","operations":1,"total":0.2,"principal":0.2,"accrued_interest":0,"y":0.2,"name":"IMPRO"},{"country":"Peru","entity_hom":"EDAPROSPO","operations":1,"total":0.2,"principal":0.19,"accrued_interest":0,"y":0.2,"name":"EDAPROSPO"},{"country":"Nicaragua","entity_hom":"FINCA","operations":1,"total":0.19,"principal":0.19,"accrued_interest":0,"y":0.19,"name":"FINCA"},{"country":"Argentina","entity_hom":"FIE GP","operations":1,"total":0.03,"principal":0.02,"accrued_interest":0,"y":0.03,"name":"FIE GP"},{"country":"Argentina","entity_hom":"OMLA","operations":1,"total":0.01,"principal":0.01,"accrued_interest":0,"y":0.01,"name":"OMLA"}],"type":"bar"}],"xAxis":{"type":"category","title":{"text":""}},"tooltip":{"borderWidth":0,"valueDecimals":0,"pointFormat":"<b>{point.entity_hom}<\/b> ({point.country}) <br>\n                               <b>Number of operations:<\/b> {point.operations:.0f}<br>\n                               <b>Portfolio:<\/b> {point.total:.0f} MM USD<br>","headerFormat":""}},"theme":{"colors":["#00C607","#A7A7B7","#28F322","#7B7B93","#A5A5AE"],"chart":{"backgroundColor":"#31313C"},"drilldown":{"activeAxisLabelStyle":{"textDecoration":"none","color":"#44DBDB"}},"title":{"style":{"color":"#FFFFFF","fontFamily":"Open Sans"}},"subtitle":{"style":{"color":"#FFFFFF","fontFamily":"Open Sans"}},"legend":{"itemStyle":{"fontFamily":"Open Sans","color":"#E1E1E4"},"itemHoverStyle":{"color":"#28F322"}},"tooltip":{"borderWidth":0.05,"backgroundColor":"rgba(42,42,52,0.95)","style":{"color":"#FFFFFF","fontFamily":"Open Sans"}},"yAxis":{"gridLineWidth":0.1,"minorgridLineWidth":0.1,"mayorgridLineWidth":0.1,"labels":{"style":{"color":"#A5A5AE","fontFamily":"Open Sans"}},"title":{"style":{"color":"#A5A5AE","fontFamily":"Open Sans"}}},"xAxis":{"labels":{"style":{"color":"#A5A5AE","fontFamily":"Open Sans"}},"title":{"style":{"color":"#A5A5AE","fontFamily":"Open Sans"}}},"plotOptions":{"series":{"borderWidth":0}},"caption":{"style":{"color":"#A5A5AE","fontFamily":"Open Sans"}},"credits":{"style":{"color":"#A5A5AE","fontFamily":"Open Sans"}},"rangeSelector":{"style":{"color":"#FFFFFF","fontFamily":"Open Sans"}}},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadCSV":"Download CSV","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","downloadXLS":"Download XLS","drillUpText":"◁ Back to {series.name}","exitFullscreen":"Exit from full screen","exportData":{"annotationHeader":"Annotations","categoryDatetimeHeader":"DateTime","categoryHeader":"Category"},"hideData":"Hide data table","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbolMagnitude":1000,"numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"shortWeekdays":["Sat","Sun","Mon","Tue","Wed","Thu","Fri"],"thousandsSep":" ","viewData":"View data table","viewFullscreen":"View in full screen","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":"Open+Sans","debug":false},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="row">
+<div id="technical-support-facility" class="section level2 col-md-6">
+<h2>TECHNICAL SUPPORT FACILITY</h2>
+<p>During 2020, 25 activities were approved by the donors committee, with estimated approved budget of USD 246K that corresponds to the following subcomponents: 44% in digital transformation, 38% in capacity building and 18% ESG. 8 activities have been already completed, benefiting 7 MFIs from 5 countries, 95 staff member were trained (23% female). Additionally, 17 consultancies are still in process. One of these is a SPI4 program aimed to train, accompany and monitor the institution’s staff in filling out the SPI4 tool, expecting to benefit at least 15 Locfund’s clients.</p>
+</div>
+<div id="capital-markets-component" class="section level2 col-md-6">
+<h2>CAPITAL MARKETS COMPONENT</h2>
+<ul>
+<li><p>New bond issuances from clients in Colombia, Honduras and Guatemala are being postponed as a consequence of the COVID-19 impact and will be resume during the next year. Locfund II is not able to join tis efforts, but it is expected that Locfund Next will take the lead.</p></li>
+<li><p>Potential secondary market transactions in El Salvador and Ecuador are expected to take place during the year.</p></li>
+</ul>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

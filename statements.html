@@ -1,0 +1,3533 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>statements.utf8</title>
+
+<script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="site_libs/core-js-2.5.3/shim.min.js"></script>
+<script src="site_libs/react-16.12.0/react.min.js"></script>
+<script src="site_libs/react-16.12.0/react-dom.min.js"></script>
+<script src="site_libs/reactwidget-1.0.0/react-tools.js"></script>
+<script src="site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="site_libs/reactable-binding-0.2.3/reactable.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<script src="site_libs/font-awesome-5.13.0/js/script.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">My Website</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Current Situation</a>
+</li>
+<li>
+  <a href="quarter_rev.html">Quarter Review</a>
+</li>
+<li>
+  <a href="financial.html">Financial Indicators</a>
+</li>
+<li>
+  <a href="social.html">Social Performance</a>
+</li>
+<li>
+  <a href="statements.html">Financial Statements</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<div id="financial-statement" class="section level1">
+<h1>FINANCIAL STATEMENT</h1>
+<div id="balance-sheet" class="section level2 tabset tabset-fade tabset-pills">
+<h2 class="tabset tabset-fade tabset-pills">BALANCE SHEET</h2>
+<div id="balance-sheet-1" class="section level3">
+<h3>BALANCE SHEET</h3>
+<div id="htmlwidget-4db1a347ad1d96e0dc39" class="reactable html-widget" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-4db1a347ad1d96e0dc39">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"tipo":["Total Assets","Total Equity","Total Liabilities","Total Liabilities and Equity"],"January":[397278845,205176247,192102598,397278845],"February":[402822355,207068750,195753605,402822355],"March":[406127998,212362883,193765115,406127998],"April":[412828578,213320686,199496027,412816713],"May":[401613439,213516814,188088528,401605342],"June":[407097582,217431899,189660425,407092324],"July":[424204452,218875859,205328593,424204452],"August":[425881014,218697568,207179913,425877481],"September":[424279530,219370003,204909527,424279530],"October":[435862827,223773682,212089145,435862827],"November":[431016728,225131967,205865527,430997494],"December":[451563682,243977439,207530600,451508039]},"columns":[{"accessor":"tipo","name":"BALANCE SHEET","type":"character","minWidth":150,"style":{"position":"sticky","left":0,"background":"#fff","zIndex":1,"borderRight":"1px solid #eee"},"headerStyle":{"position":"sticky","left":0,"background":"#fff","zIndex":1,"borderRight":"1px solid #eee"}},{"accessor":"January","name":"January","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":110},{"accessor":"February","name":"February","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":110},{"accessor":"March","name":"March","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":110},{"accessor":"April","name":"April","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":110},{"accessor":"May","name":"May","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":110},{"accessor":"June","name":"June","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":110},{"accessor":"July","name":"July","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":110},{"accessor":"August","name":"August","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":110},{"accessor":"September","name":"September","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":110},{"accessor":"October","name":"October","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":110},{"accessor":"November","name":"November","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":110},{"accessor":"December","name":"December","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":110}],"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"bordered":true,"striped":true,"theme":{"borderColor":"#E1E1E4","stripedColor":"#F4F4F5","highlightColor":"#E8E8EA","cellPadding":"8px 12px","style":{"fontFamily":"Helvetica"}},"dataKey":"df87d2c927bdf40baa60dde198f132b4","key":"df87d2c927bdf40baa60dde198f132b4"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="assets" class="section level3">
+<h3>ASSETS</h3>
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:700px; overflow-x: scroll; width:100%; ">
+<table class="table lightable-classic" style="margin-left: auto; margin-right: auto; font-family: Helvetica; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+ASSETS
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Variable
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+January
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+February
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+March
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+April
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+May
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+June
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+July
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+August
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+September
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+October
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+November
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+December
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+Total Assets
+</td>
+<td style="text-align:left;font-weight: bold;">
+84,566,136
+</td>
+<td style="text-align:left;font-weight: bold;">
+84,566,927
+</td>
+<td style="text-align:left;font-weight: bold;">
+82,721,588
+</td>
+<td style="text-align:left;font-weight: bold;">
+83,445,525
+</td>
+<td style="text-align:left;font-weight: bold;">
+71,372,014
+</td>
+<td style="text-align:left;font-weight: bold;">
+71,330,387
+</td>
+<td style="text-align:left;font-weight: bold;">
+71,918,504
+</td>
+<td style="text-align:left;font-weight: bold;">
+72,244,001
+</td>
+<td style="text-align:left;font-weight: bold;">
+69,523,519
+</td>
+<td style="text-align:left;font-weight: bold;">
+69,637,399
+</td>
+<td style="text-align:left;font-weight: bold;">
+58,707,784
+</td>
+<td style="text-align:left;font-weight: bold;">
+59,976,710
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 2em;" indentlevel="1">
+Cash and cash equivalent
+</td>
+<td style="text-align:left;font-weight: bold;">
+5,688,535
+</td>
+<td style="text-align:left;font-weight: bold;">
+5,999,822
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,774,368
+</td>
+<td style="text-align:left;font-weight: bold;">
+10,793,920
+</td>
+<td style="text-align:left;font-weight: bold;">
+830,034
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,526,032
+</td>
+<td style="text-align:left;font-weight: bold;">
+4,367,650
+</td>
+<td style="text-align:left;font-weight: bold;">
+6,505,332
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,406,741
+</td>
+<td style="text-align:left;font-weight: bold;">
+10,724,344
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,044,205
+</td>
+<td style="text-align:left;font-weight: bold;">
+4,246,689
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 4em;" indentlevel="1">
+BCP Miami
+</td>
+<td style="text-align:left;">
+5,593,424
+</td>
+<td style="text-align:left;">
+5,926,296
+</td>
+<td style="text-align:left;">
+8,676,469
+</td>
+<td style="text-align:left;">
+10,636,071
+</td>
+<td style="text-align:left;">
+672,185
+</td>
+<td style="text-align:left;">
+2,368,183
+</td>
+<td style="text-align:left;">
+4,236,148
+</td>
+<td style="text-align:left;">
+6,397,050
+</td>
+<td style="text-align:left;">
+8,309,946
+</td>
+<td style="text-align:left;">
+10,627,848
+</td>
+<td style="text-align:left;">
+956,874
+</td>
+<td style="text-align:left;">
+4,190,051
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 4em;" indentlevel="1">
+BCP Miami - Restricted Funds TSF
+</td>
+<td style="text-align:left;">
+95,111
+</td>
+<td style="text-align:left;">
+73,526
+</td>
+<td style="text-align:left;">
+97,899
+</td>
+<td style="text-align:left;">
+157,849
+</td>
+<td style="text-align:left;">
+157,849
+</td>
+<td style="text-align:left;">
+157,849
+</td>
+<td style="text-align:left;">
+131,502
+</td>
+<td style="text-align:left;">
+108,282
+</td>
+<td style="text-align:left;">
+96,795
+</td>
+<td style="text-align:left;">
+96,496
+</td>
+<td style="text-align:left;">
+87,331
+</td>
+<td style="text-align:left;">
+56,638
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Additional Acces Fee - MFX
+</td>
+<td style="text-align:left;">
+200,000
+</td>
+<td style="text-align:left;">
+200,000
+</td>
+<td style="text-align:left;">
+200,000
+</td>
+<td style="text-align:left;">
+200,000
+</td>
+<td style="text-align:left;">
+200,000
+</td>
+<td style="text-align:left;">
+200,000
+</td>
+<td style="text-align:left;">
+200,000
+</td>
+<td style="text-align:left;">
+200,000
+</td>
+<td style="text-align:left;">
+200,000
+</td>
+<td style="text-align:left;">
+200,000
+</td>
+<td style="text-align:left;">
+200,000
+</td>
+<td style="text-align:left;">
+200,000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Interest - MFX
+</td>
+<td style="text-align:left;">
+184
+</td>
+<td style="text-align:left;">
+358
+</td>
+<td style="text-align:left;">
+392
+</td>
+<td style="text-align:left;">
+317
+</td>
+<td style="text-align:left;">
+239
+</td>
+<td style="text-align:left;">
+169
+</td>
+<td style="text-align:left;">
+99
+</td>
+<td style="text-align:left;">
+29
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 2em;" indentlevel="1">
+Portfolio
+</td>
+<td style="text-align:left;font-weight: bold;">
+75,057,887
+</td>
+<td style="text-align:left;font-weight: bold;">
+74,856,073
+</td>
+<td style="text-align:left;font-weight: bold;">
+71,523,704
+</td>
+<td style="text-align:left;font-weight: bold;">
+69,969,374
+</td>
+<td style="text-align:left;font-weight: bold;">
+68,431,453
+</td>
+<td style="text-align:left;font-weight: bold;">
+66,635,725
+</td>
+<td style="text-align:left;font-weight: bold;">
+65,115,431
+</td>
+<td style="text-align:left;font-weight: bold;">
+63,383,517
+</td>
+<td style="text-align:left;font-weight: bold;">
+61,324,889
+</td>
+<td style="text-align:left;font-weight: bold;">
+59,019,672
+</td>
+<td style="text-align:left;font-weight: bold;">
+57,680,618
+</td>
+<td style="text-align:left;font-weight: bold;">
+55,805,038
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 4em;" indentlevel="1">
+Capital Markets
+</td>
+<td style="text-align:left;font-weight: bold;">
+4,227,681
+</td>
+<td style="text-align:left;font-weight: bold;">
+4,252,183
+</td>
+<td style="text-align:left;font-weight: bold;">
+4,062,076
+</td>
+<td style="text-align:left;font-weight: bold;">
+4,066,889
+</td>
+<td style="text-align:left;font-weight: bold;">
+4,073,191
+</td>
+<td style="text-align:left;font-weight: bold;">
+3,957,311
+</td>
+<td style="text-align:left;font-weight: bold;">
+3,963,029
+</td>
+<td style="text-align:left;font-weight: bold;">
+3,968,403
+</td>
+<td style="text-align:left;font-weight: bold;">
+3,837,096
+</td>
+<td style="text-align:left;font-weight: bold;">
+3,841,894
+</td>
+<td style="text-align:left;font-weight: bold;">
+3,845,871
+</td>
+<td style="text-align:left;font-weight: bold;">
+3,728,972
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 4em;" indentlevel="1">
+Loans Receivable
+</td>
+<td style="text-align:left;font-weight: bold;">
+64,307,732
+</td>
+<td style="text-align:left;font-weight: bold;">
+62,838,199
+</td>
+<td style="text-align:left;font-weight: bold;">
+59,871,457
+</td>
+<td style="text-align:left;font-weight: bold;">
+58,554,713
+</td>
+<td style="text-align:left;font-weight: bold;">
+58,188,681
+</td>
+<td style="text-align:left;font-weight: bold;">
+57,341,880
+</td>
+<td style="text-align:left;font-weight: bold;">
+55,954,170
+</td>
+<td style="text-align:left;font-weight: bold;">
+54,185,264
+</td>
+<td style="text-align:left;font-weight: bold;">
+52,438,676
+</td>
+<td style="text-align:left;font-weight: bold;">
+50,268,898
+</td>
+<td style="text-align:left;font-weight: bold;">
+48,894,722
+</td>
+<td style="text-align:left;font-weight: bold;">
+48,283,380
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 4em;" indentlevel="1">
+Promissory Notes
+</td>
+<td style="text-align:left;font-weight: bold;">
+6,522,474
+</td>
+<td style="text-align:left;font-weight: bold;">
+7,765,691
+</td>
+<td style="text-align:left;font-weight: bold;">
+7,590,171
+</td>
+<td style="text-align:left;font-weight: bold;">
+7,347,772
+</td>
+<td style="text-align:left;font-weight: bold;">
+6,169,581
+</td>
+<td style="text-align:left;font-weight: bold;">
+5,336,534
+</td>
+<td style="text-align:left;font-weight: bold;">
+5,198,232
+</td>
+<td style="text-align:left;font-weight: bold;">
+5,229,850
+</td>
+<td style="text-align:left;font-weight: bold;">
+5,049,117
+</td>
+<td style="text-align:left;font-weight: bold;">
+4,908,880
+</td>
+<td style="text-align:left;font-weight: bold;">
+4,940,025
+</td>
+<td style="text-align:left;font-weight: bold;">
+3,792,686
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 2em;" indentlevel="1">
+Hedged Assets
+</td>
+<td style="text-align:left;font-weight: bold;">
+3,700,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+3,700,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,500,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,500,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,500,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,500,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,500,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,500,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 4em;" indentlevel="1">
+Hedged assets - Honduras
+</td>
+<td style="text-align:left;">
+1,200,000
+</td>
+<td style="text-align:left;">
+1,200,000
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 4em;" indentlevel="1">
+Hedged assets - Nicaragua
+</td>
+<td style="text-align:left;">
+2,500,000
+</td>
+<td style="text-align:left;">
+2,500,000
+</td>
+<td style="text-align:left;">
+2,500,000
+</td>
+<td style="text-align:left;">
+2,500,000
+</td>
+<td style="text-align:left;">
+2,500,000
+</td>
+<td style="text-align:left;">
+2,500,000
+</td>
+<td style="text-align:left;">
+2,500,000
+</td>
+<td style="text-align:left;">
+2,500,000
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Impairment Provision Reserve
+</td>
+<td style="text-align:left;">
+-329,358
+</td>
+<td style="text-align:left;">
+-330,859
+</td>
+<td style="text-align:left;">
+-304,167
+</td>
+<td style="text-align:left;">
+-244,569
+</td>
+<td style="text-align:left;">
+-709,378
+</td>
+<td style="text-align:left;">
+-550,223
+</td>
+<td style="text-align:left;">
+-472,491
+</td>
+<td style="text-align:left;">
+-468,216
+</td>
+<td style="text-align:left;">
+-437,579
+</td>
+<td style="text-align:left;">
+-509,639
+</td>
+<td style="text-align:left;">
+-332,563
+</td>
+<td style="text-align:left;">
+-302,160
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Management Fee paid in advance
+</td>
+<td style="text-align:left;">
+230,548
+</td>
+<td style="text-align:left;">
+124,528
+</td>
+<td style="text-align:left;">
+11,631
+</td>
+<td style="text-align:left;">
+212,164
+</td>
+<td style="text-align:left;">
+106,693
+</td>
+<td style="text-align:left;">
+7,052
+</td>
+<td style="text-align:left;">
+197,528
+</td>
+<td style="text-align:left;">
+99,271
+</td>
+<td style="text-align:left;">
+6,825
+</td>
+<td style="text-align:left;">
+181,812
+</td>
+<td style="text-align:left;">
+95,740
+</td>
+<td style="text-align:left;">
+8,790
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+D&amp;O Insurance paid in advance
+</td>
+<td style="text-align:left;">
+7,093
+</td>
+<td style="text-align:left;">
+5,911
+</td>
+<td style="text-align:left;">
+4,729
+</td>
+<td style="text-align:left;">
+3,547
+</td>
+<td style="text-align:left;">
+2,364
+</td>
+<td style="text-align:left;">
+1,182
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+13,945
+</td>
+<td style="text-align:left;">
+12,677
+</td>
+<td style="text-align:left;">
+11,410
+</td>
+<td style="text-align:left;">
+10,142
+</td>
+<td style="text-align:left;">
+8,874
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Others
+</td>
+<td style="text-align:left;">
+11,247
+</td>
+<td style="text-align:left;">
+11,094
+</td>
+<td style="text-align:left;">
+10,931
+</td>
+<td style="text-align:left;">
+10,772
+</td>
+<td style="text-align:left;">
+10,609
+</td>
+<td style="text-align:left;">
+10,450
+</td>
+<td style="text-align:left;">
+10,287
+</td>
+<td style="text-align:left;">
+10,123
+</td>
+<td style="text-align:left;">
+9,966
+</td>
+<td style="text-align:left;">
+9,800
+</td>
+<td style="text-align:left;">
+9,642
+</td>
+<td style="text-align:left;">
+9,479
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="liabilities" class="section level3">
+<h3>LIABILITIES</h3>
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:700px; overflow-x: scroll; width:100%; ">
+<table class="table lightable-classic" style="margin-left: auto; margin-right: auto; font-family: Helvetica; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+LIABILITIES
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Variable
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+January
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+February
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+March
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+April
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+May
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+June
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+July
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+August
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+September
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+October
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+November
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+December
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+LIABILITIES
+</td>
+<td style="text-align:left;font-weight: bold;">
+45,654,238
+</td>
+<td style="text-align:left;font-weight: bold;">
+45,793,415
+</td>
+<td style="text-align:left;font-weight: bold;">
+44,872,594
+</td>
+<td style="text-align:left;font-weight: bold;">
+45,155,527
+</td>
+<td style="text-align:left;font-weight: bold;">
+33,014,635
+</td>
+<td style="text-align:left;font-weight: bold;">
+32,867,974
+</td>
+<td style="text-align:left;font-weight: bold;">
+32,987,083
+</td>
+<td style="text-align:left;font-weight: bold;">
+33,073,429
+</td>
+<td style="text-align:left;font-weight: bold;">
+30,371,321
+</td>
+<td style="text-align:left;font-weight: bold;">
+30,489,144
+</td>
+<td style="text-align:left;font-weight: bold;">
+18,843,694
+</td>
+<td style="text-align:left;font-weight: bold;">
+19,656,806
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 2em;" indentlevel="1">
+Short Term Liabilities
+</td>
+<td style="text-align:left;font-weight: bold;">
+27,687,022
+</td>
+<td style="text-align:left;font-weight: bold;">
+27,824,569
+</td>
+<td style="text-align:left;font-weight: bold;">
+26,902,005
+</td>
+<td style="text-align:left;font-weight: bold;">
+27,183,252
+</td>
+<td style="text-align:left;font-weight: bold;">
+15,040,617
+</td>
+<td style="text-align:left;font-weight: bold;">
+14,892,269
+</td>
+<td style="text-align:left;font-weight: bold;">
+24,248,359
+</td>
+<td style="text-align:left;font-weight: bold;">
+24,333,834
+</td>
+<td style="text-align:left;font-weight: bold;">
+21,630,883
+</td>
+<td style="text-align:left;font-weight: bold;">
+21,748,336
+</td>
+<td style="text-align:left;font-weight: bold;">
+15,101,039
+</td>
+<td style="text-align:left;font-weight: bold;">
+19,656,806
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 4em;" indentlevel="1">
+Accounts Payable
+</td>
+<td style="text-align:left;font-weight: bold;">
+63,739
+</td>
+<td style="text-align:left;font-weight: bold;">
+35,448
+</td>
+<td style="text-align:left;font-weight: bold;">
+128,291
+</td>
+<td style="text-align:left;font-weight: bold;">
+153,405
+</td>
+<td style="text-align:left;font-weight: bold;">
+37,021
+</td>
+<td style="text-align:left;font-weight: bold;">
+28,088
+</td>
+<td style="text-align:left;font-weight: bold;">
+49,073
+</td>
+<td style="text-align:left;font-weight: bold;">
+34,151
+</td>
+<td style="text-align:left;font-weight: bold;">
+36,899
+</td>
+<td style="text-align:left;font-weight: bold;">
+23,461
+</td>
+<td style="text-align:left;font-weight: bold;">
+32,214
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,556,810
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 6em;" indentlevel="1">
+FUNDA-PRO
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,503,383
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 6em;" indentlevel="1">
+Advisory Committe Meetings Costs
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+2,100
+</td>
+<td style="text-align:left;">
+2,100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 6em;" indentlevel="1">
+Capital and Interest received in advance
+</td>
+<td style="text-align:left;">
+32,094
+</td>
+<td style="text-align:left;">
+9,049
+</td>
+<td style="text-align:left;">
+61,478
+</td>
+<td style="text-align:left;">
+130,684
+</td>
+<td style="text-align:left;">
+9,149
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+18,670
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+26,179
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 6em;" indentlevel="1">
+Commitment Fees
+</td>
+<td style="text-align:left;">
+4,361
+</td>
+<td style="text-align:left;">
+4,361
+</td>
+<td style="text-align:left;">
+4,361
+</td>
+<td style="text-align:left;">
+4,361
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 6em;" indentlevel="1">
+Credit Committe Meetings Costs
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+750
+</td>
+<td style="text-align:left;">
+750
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+1,500
+</td>
+<td style="text-align:left;">
+1,500
+</td>
+<td style="text-align:left;">
+500
+</td>
+<td style="text-align:left;">
+500
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 6em;" indentlevel="1">
+External Auditors
+</td>
+<td style="text-align:left;">
+21,784
+</td>
+<td style="text-align:left;">
+16,538
+</td>
+<td style="text-align:left;">
+15,790
+</td>
+<td style="text-align:left;">
+15,041
+</td>
+<td style="text-align:left;">
+18,789
+</td>
+<td style="text-align:left;">
+22,536
+</td>
+<td style="text-align:left;">
+26,284
+</td>
+<td style="text-align:left;">
+30,032
+</td>
+<td style="text-align:left;">
+33,780
+</td>
+<td style="text-align:left;">
+19,534
+</td>
+<td style="text-align:left;">
+23,281
+</td>
+<td style="text-align:left;">
+18,036
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 6em;" indentlevel="1">
+Legal Services
+</td>
+<td style="text-align:left;">
+5,500
+</td>
+<td style="text-align:left;">
+5,500
+</td>
+<td style="text-align:left;">
+5,500
+</td>
+<td style="text-align:left;">
+2,569
+</td>
+<td style="text-align:left;">
+8,333
+</td>
+<td style="text-align:left;">
+5,552
+</td>
+<td style="text-align:left;">
+2,619
+</td>
+<td style="text-align:left;">
+2,619
+</td>
+<td style="text-align:left;">
+2,619
+</td>
+<td style="text-align:left;">
+3,427
+</td>
+<td style="text-align:left;">
+6,833
+</td>
+<td style="text-align:left;">
+7,112
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 6em;" indentlevel="1">
+Others
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+41,162
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 4em;" indentlevel="1">
+Hedged Liabilities
+</td>
+<td style="text-align:left;font-weight: bold;">
+4,114,503
+</td>
+<td style="text-align:left;font-weight: bold;">
+4,105,500
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,855,751
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,848,840
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,841,721
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,834,844
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,827,754
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,820,683
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 6em;" indentlevel="1">
+Hedged liabilities - Honduras
+</td>
+<td style="text-align:left;">
+1,244,878
+</td>
+<td style="text-align:left;">
+1,242,584
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 6em;" indentlevel="1">
+Hedged liabilities - Nicaragua
+</td>
+<td style="text-align:left;">
+2,869,625
+</td>
+<td style="text-align:left;">
+2,862,916
+</td>
+<td style="text-align:left;">
+2,855,751
+</td>
+<td style="text-align:left;">
+2,848,840
+</td>
+<td style="text-align:left;">
+2,841,721
+</td>
+<td style="text-align:left;">
+2,834,844
+</td>
+<td style="text-align:left;">
+2,827,754
+</td>
+<td style="text-align:left;">
+2,820,683
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 4em;" indentlevel="1">
+Senior Loans
+</td>
+<td style="text-align:left;font-weight: bold;">
+23,413,669
+</td>
+<td style="text-align:left;font-weight: bold;">
+23,610,095
+</td>
+<td style="text-align:left;font-weight: bold;">
+23,820,064
+</td>
+<td style="text-align:left;font-weight: bold;">
+24,023,158
+</td>
+<td style="text-align:left;font-weight: bold;">
+12,004,026
+</td>
+<td style="text-align:left;font-weight: bold;">
+11,871,488
+</td>
+<td style="text-align:left;font-weight: bold;">
+21,240,030
+</td>
+<td style="text-align:left;font-weight: bold;">
+21,370,718
+</td>
+<td style="text-align:left;font-weight: bold;">
+21,497,189
+</td>
+<td style="text-align:left;font-weight: bold;">
+21,628,379
+</td>
+<td style="text-align:left;font-weight: bold;">
+14,981,494
+</td>
+<td style="text-align:left;font-weight: bold;">
+18,043,358
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 6em;" indentlevel="1">
+BIO
+</td>
+<td style="text-align:left;font-weight: bold;">
+505,167
+</td>
+<td style="text-align:left;font-weight: bold;">
+510,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+515,167
+</td>
+<td style="text-align:left;font-weight: bold;">
+520,167
+</td>
+<td style="text-align:left;font-weight: bold;">
+525,333
+</td>
+<td style="text-align:left;font-weight: bold;">
+500,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,005,167
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,010,333
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,015,333
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,020,500
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,025,500
+</td>
+<td style="text-align:left;font-weight: bold;">
+500,000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 6em;" indentlevel="1">
+HYOS
+</td>
+<td style="text-align:left;font-weight: bold;">
+7,750
+</td>
+<td style="text-align:left;font-weight: bold;">
+15,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+22,750
+</td>
+<td style="text-align:left;font-weight: bold;">
+30,250
+</td>
+<td style="text-align:left;font-weight: bold;">
+38,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+<td style="text-align:left;font-weight: bold;">
+757,750
+</td>
+<td style="text-align:left;font-weight: bold;">
+765,500
+</td>
+<td style="text-align:left;font-weight: bold;">
+773,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+780,750
+</td>
+<td style="text-align:left;font-weight: bold;">
+788,250
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,500,000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 6em;" indentlevel="1">
+IDB
+</td>
+<td style="text-align:left;font-weight: bold;">
+22,785,008
+</td>
+<td style="text-align:left;font-weight: bold;">
+22,892,349
+</td>
+<td style="text-align:left;font-weight: bold;">
+23,007,092
+</td>
+<td style="text-align:left;font-weight: bold;">
+23,118,134
+</td>
+<td style="text-align:left;font-weight: bold;">
+11,273,376
+</td>
+<td style="text-align:left;font-weight: bold;">
+11,317,205
+</td>
+<td style="text-align:left;font-weight: bold;">
+11,362,495
+</td>
+<td style="text-align:left;font-weight: bold;">
+11,407,786
+</td>
+<td style="text-align:left;font-weight: bold;">
+11,451,614
+</td>
+<td style="text-align:left;font-weight: bold;">
+11,496,905
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 6em;" indentlevel="1">
+IIC
+</td>
+<td style="text-align:left;font-weight: bold;">
+97,411
+</td>
+<td style="text-align:left;font-weight: bold;">
+143,472
+</td>
+<td style="text-align:left;font-weight: bold;">
+192,708
+</td>
+<td style="text-align:left;font-weight: bold;">
+240,253
+</td>
+<td style="text-align:left;font-weight: bold;">
+19,889
+</td>
+<td style="text-align:left;font-weight: bold;">
+57,182
+</td>
+<td style="text-align:left;font-weight: bold;">
+5,095,718
+</td>
+<td style="text-align:left;font-weight: bold;">
+5,134,254
+</td>
+<td style="text-align:left;font-weight: bold;">
+5,171,547
+</td>
+<td style="text-align:left;font-weight: bold;">
+5,210,082
+</td>
+<td style="text-align:left;font-weight: bold;">
+10,015,755
+</td>
+<td style="text-align:left;font-weight: bold;">
+10,050,642
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 6em;" indentlevel="1">
+MIF
+</td>
+<td style="text-align:left;font-weight: bold;">
+17,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+26,667
+</td>
+<td style="text-align:left;font-weight: bold;">
+37,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+47,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+57,333
+</td>
+<td style="text-align:left;font-weight: bold;">
+6,333
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,016,667
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,027,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,037,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,047,334
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,057,334
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,006,667
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 6em;" indentlevel="1">
+SIFEM
+</td>
+<td style="text-align:left;font-weight: bold;">
+20,667
+</td>
+<td style="text-align:left;font-weight: bold;">
+40,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+60,667
+</td>
+<td style="text-align:left;font-weight: bold;">
+80,667
+</td>
+<td style="text-align:left;font-weight: bold;">
+101,334
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,020,667
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,041,334
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,061,334
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,082,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,102,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+4,000,000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 6em;" indentlevel="1">
+Deferred financing costs
+</td>
+<td style="text-align:left;">
+-19,334
+</td>
+<td style="text-align:left;">
+-17,393
+</td>
+<td style="text-align:left;">
+-15,320
+</td>
+<td style="text-align:left;">
+-13,313
+</td>
+<td style="text-align:left;">
+-11,239
+</td>
+<td style="text-align:left;">
+-9,232
+</td>
+<td style="text-align:left;">
+-18,434
+</td>
+<td style="text-align:left;">
+-15,489
+</td>
+<td style="text-align:left;">
+-12,639
+</td>
+<td style="text-align:left;">
+-9,192
+</td>
+<td style="text-align:left;">
+-7,345
+</td>
+<td style="text-align:left;">
+-13,951
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 4em;" indentlevel="1">
+TSF (Donors)
+</td>
+<td style="text-align:left;font-weight: bold;">
+95,111
+</td>
+<td style="text-align:left;font-weight: bold;">
+73,526
+</td>
+<td style="text-align:left;font-weight: bold;">
+97,899
+</td>
+<td style="text-align:left;font-weight: bold;">
+157,849
+</td>
+<td style="text-align:left;font-weight: bold;">
+157,849
+</td>
+<td style="text-align:left;font-weight: bold;">
+157,849
+</td>
+<td style="text-align:left;font-weight: bold;">
+131,502
+</td>
+<td style="text-align:left;font-weight: bold;">
+108,282
+</td>
+<td style="text-align:left;font-weight: bold;">
+96,795
+</td>
+<td style="text-align:left;font-weight: bold;">
+96,496
+</td>
+<td style="text-align:left;font-weight: bold;">
+87,331
+</td>
+<td style="text-align:left;font-weight: bold;">
+56,638
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 6em;" indentlevel="1">
+TSF (Donors)
+</td>
+<td style="text-align:left;">
+95,111
+</td>
+<td style="text-align:left;">
+73,526
+</td>
+<td style="text-align:left;">
+97,899
+</td>
+<td style="text-align:left;">
+157,849
+</td>
+<td style="text-align:left;">
+157,849
+</td>
+<td style="text-align:left;">
+157,849
+</td>
+<td style="text-align:left;">
+131,502
+</td>
+<td style="text-align:left;">
+108,282
+</td>
+<td style="text-align:left;">
+96,795
+</td>
+<td style="text-align:left;">
+96,496
+</td>
+<td style="text-align:left;">
+87,331
+</td>
+<td style="text-align:left;">
+56,638
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 2em;" indentlevel="1">
+Long Term Liabilities
+</td>
+<td style="text-align:left;font-weight: bold;">
+17,967,216
+</td>
+<td style="text-align:left;font-weight: bold;">
+17,968,846
+</td>
+<td style="text-align:left;font-weight: bold;">
+17,970,589
+</td>
+<td style="text-align:left;font-weight: bold;">
+17,972,275
+</td>
+<td style="text-align:left;font-weight: bold;">
+17,974,018
+</td>
+<td style="text-align:left;font-weight: bold;">
+17,975,705
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,738,724
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,739,595
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,740,438
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,740,808
+</td>
+<td style="text-align:left;font-weight: bold;">
+3,742,655
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 4em;" indentlevel="1">
+Senior Loans
+</td>
+<td style="text-align:left;font-weight: bold;">
+17,967,216
+</td>
+<td style="text-align:left;font-weight: bold;">
+17,968,846
+</td>
+<td style="text-align:left;font-weight: bold;">
+17,970,589
+</td>
+<td style="text-align:left;font-weight: bold;">
+17,972,275
+</td>
+<td style="text-align:left;font-weight: bold;">
+17,974,018
+</td>
+<td style="text-align:left;font-weight: bold;">
+17,975,705
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,738,724
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,739,595
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,740,438
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,740,808
+</td>
+<td style="text-align:left;font-weight: bold;">
+3,742,655
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 6em;" indentlevel="1">
+BIO
+</td>
+<td style="text-align:left;font-weight: bold;">
+500,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+500,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+500,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+500,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+500,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+500,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 6em;" indentlevel="1">
+HYOS
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,500,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,500,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,500,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,500,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,500,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,500,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+750,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+750,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+750,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+750,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+750,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 6em;" indentlevel="1">
+IIC
+</td>
+<td style="text-align:left;font-weight: bold;">
+10,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+10,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+10,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+10,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+10,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+10,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+5,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+5,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+5,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+5,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 6em;" indentlevel="1">
+MIF
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 6em;" indentlevel="1">
+SIFEM
+</td>
+<td style="text-align:left;font-weight: bold;">
+4,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+4,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+4,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+4,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+4,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+4,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+2,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 6em;" indentlevel="1">
+Deferred financing costs
+</td>
+<td style="text-align:left;">
+-32,784
+</td>
+<td style="text-align:left;">
+-31,154
+</td>
+<td style="text-align:left;">
+-29,411
+</td>
+<td style="text-align:left;">
+-27,725
+</td>
+<td style="text-align:left;">
+-25,982
+</td>
+<td style="text-align:left;">
+-24,295
+</td>
+<td style="text-align:left;">
+-11,276
+</td>
+<td style="text-align:left;">
+-10,405
+</td>
+<td style="text-align:left;">
+-9,562
+</td>
+<td style="text-align:left;">
+-9,192
+</td>
+<td style="text-align:left;">
+-7,345
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="equity" class="section level3">
+<h3>EQUITY</h3>
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:700px; overflow-x: scroll; width:100%; ">
+<table class="table lightable-classic" style="margin-left: auto; margin-right: auto; font-family: Helvetica; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+EQUITY
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Variable
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+January
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+February
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+March
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+April
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+May
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+June
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+July
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+August
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+September
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+October
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+November
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+December
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+EQUITY
+</td>
+<td style="text-align:left;font-weight: bold;">
+38,911,900
+</td>
+<td style="text-align:left;font-weight: bold;">
+38,773,506
+</td>
+<td style="text-align:left;font-weight: bold;">
+37,848,991
+</td>
+<td style="text-align:left;font-weight: bold;">
+38,289,995
+</td>
+<td style="text-align:left;font-weight: bold;">
+38,357,376
+</td>
+<td style="text-align:left;font-weight: bold;">
+38,462,417
+</td>
+<td style="text-align:left;font-weight: bold;">
+38,931,416
+</td>
+<td style="text-align:left;font-weight: bold;">
+39,170,574
+</td>
+<td style="text-align:left;font-weight: bold;">
+39,152,198
+</td>
+<td style="text-align:left;font-weight: bold;">
+39,148,260
+</td>
+<td style="text-align:left;font-weight: bold;">
+39,864,088
+</td>
+<td style="text-align:left;font-weight: bold;">
+40,319,902
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 2em;" indentlevel="1">
+Capital
+</td>
+<td style="text-align:left;font-weight: bold;">
+31,100,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+31,100,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+31,100,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+31,100,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+31,100,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+31,100,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+31,100,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+31,100,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+31,100,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+31,100,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+31,100,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+31,100,000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 6em;" indentlevel="1">
+BIM Microfinance
+</td>
+<td style="text-align:left;font-weight: bold;">
+600,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+600,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+50,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+50,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+50,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+50,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+50,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+50,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+50,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+50,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+50,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+50,000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 6em;" indentlevel="1">
+BIO
+</td>
+<td style="text-align:left;font-weight: bold;">
+4,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+4,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+4,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+4,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+4,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+4,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+4,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+4,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+4,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+4,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+4,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+4,000,000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 6em;" indentlevel="1">
+FMO
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 6em;" indentlevel="1">
+Hyos Invest Holding AG
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,500,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,500,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,500,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,500,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,500,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,500,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,500,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,500,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,500,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,500,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,500,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,500,000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 6em;" indentlevel="1">
+MIF
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 6em;" indentlevel="1">
+Norfund
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+8,000,000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 6em;" indentlevel="1">
+PISA S.A.
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+<td style="text-align:left;font-weight: bold;">
+0
+</td>
+<td style="text-align:left;font-weight: bold;">
+550,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+550,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+550,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+550,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+550,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+550,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+550,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+550,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+550,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+550,000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 6em;" indentlevel="1">
+SIFEM
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,000,000
+</td>
+<td style="text-align:left;font-weight: bold;">
+1,000,000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 4em;" indentlevel="1">
+BIM Microfinance
+</td>
+<td style="text-align:left;">
+600,000
+</td>
+<td style="text-align:left;">
+600,000
+</td>
+<td style="text-align:left;">
+50,000
+</td>
+<td style="text-align:left;">
+50,000
+</td>
+<td style="text-align:left;">
+50,000
+</td>
+<td style="text-align:left;">
+50,000
+</td>
+<td style="text-align:left;">
+50,000
+</td>
+<td style="text-align:left;">
+50,000
+</td>
+<td style="text-align:left;">
+50,000
+</td>
+<td style="text-align:left;">
+50,000
+</td>
+<td style="text-align:left;">
+50,000
+</td>
+<td style="text-align:left;">
+50,000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 4em;" indentlevel="1">
+BIO
+</td>
+<td style="text-align:left;">
+4,000,000
+</td>
+<td style="text-align:left;">
+4,000,000
+</td>
+<td style="text-align:left;">
+4,000,000
+</td>
+<td style="text-align:left;">
+4,000,000
+</td>
+<td style="text-align:left;">
+4,000,000
+</td>
+<td style="text-align:left;">
+4,000,000
+</td>
+<td style="text-align:left;">
+4,000,000
+</td>
+<td style="text-align:left;">
+4,000,000
+</td>
+<td style="text-align:left;">
+4,000,000
+</td>
+<td style="text-align:left;">
+4,000,000
+</td>
+<td style="text-align:left;">
+4,000,000
+</td>
+<td style="text-align:left;">
+4,000,000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 4em;" indentlevel="1">
+FMO
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 4em;" indentlevel="1">
+Hyos Invest Holding AG
+</td>
+<td style="text-align:left;">
+1,500,000
+</td>
+<td style="text-align:left;">
+1,500,000
+</td>
+<td style="text-align:left;">
+1,500,000
+</td>
+<td style="text-align:left;">
+1,500,000
+</td>
+<td style="text-align:left;">
+1,500,000
+</td>
+<td style="text-align:left;">
+1,500,000
+</td>
+<td style="text-align:left;">
+1,500,000
+</td>
+<td style="text-align:left;">
+1,500,000
+</td>
+<td style="text-align:left;">
+1,500,000
+</td>
+<td style="text-align:left;">
+1,500,000
+</td>
+<td style="text-align:left;">
+1,500,000
+</td>
+<td style="text-align:left;">
+1,500,000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 4em;" indentlevel="1">
+MIF
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 4em;" indentlevel="1">
+Norfund
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+<td style="text-align:left;">
+8,000,000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 4em;" indentlevel="1">
+PISA S.A.
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+550,000
+</td>
+<td style="text-align:left;">
+550,000
+</td>
+<td style="text-align:left;">
+550,000
+</td>
+<td style="text-align:left;">
+550,000
+</td>
+<td style="text-align:left;">
+550,000
+</td>
+<td style="text-align:left;">
+550,000
+</td>
+<td style="text-align:left;">
+550,000
+</td>
+<td style="text-align:left;">
+550,000
+</td>
+<td style="text-align:left;">
+550,000
+</td>
+<td style="text-align:left;">
+550,000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 4em;" indentlevel="1">
+SIFEM
+</td>
+<td style="text-align:left;">
+1,000,000
+</td>
+<td style="text-align:left;">
+1,000,000
+</td>
+<td style="text-align:left;">
+1,000,000
+</td>
+<td style="text-align:left;">
+1,000,000
+</td>
+<td style="text-align:left;">
+1,000,000
+</td>
+<td style="text-align:left;">
+1,000,000
+</td>
+<td style="text-align:left;">
+1,000,000
+</td>
+<td style="text-align:left;">
+1,000,000
+</td>
+<td style="text-align:left;">
+1,000,000
+</td>
+<td style="text-align:left;">
+1,000,000
+</td>
+<td style="text-align:left;">
+1,000,000
+</td>
+<td style="text-align:left;">
+1,000,000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Accumulated Results
+</td>
+<td style="text-align:left;">
+7,187,347
+</td>
+<td style="text-align:left;">
+7,187,347
+</td>
+<td style="text-align:left;">
+7,187,347
+</td>
+<td style="text-align:left;">
+7,187,347
+</td>
+<td style="text-align:left;">
+7,187,347
+</td>
+<td style="text-align:left;">
+7,187,347
+</td>
+<td style="text-align:left;">
+7,187,347
+</td>
+<td style="text-align:left;">
+7,187,347
+</td>
+<td style="text-align:left;">
+7,187,347
+</td>
+<td style="text-align:left;">
+7,187,347
+</td>
+<td style="text-align:left;">
+7,187,347
+</td>
+<td style="text-align:left;">
+7,187,347
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;padding-left: 2em;" indentlevel="1">
+Reserve for Currency Loss
+</td>
+<td style="text-align:left;font-weight: bold;">
+574,803
+</td>
+<td style="text-align:left;font-weight: bold;">
+565,434
+</td>
+<td style="text-align:left;font-weight: bold;">
+523,400
+</td>
+<td style="text-align:left;font-weight: bold;">
+529,253
+</td>
+<td style="text-align:left;font-weight: bold;">
+552,435
+</td>
+<td style="text-align:left;font-weight: bold;">
+553,276
+</td>
+<td style="text-align:left;font-weight: bold;">
+530,701
+</td>
+<td style="text-align:left;font-weight: bold;">
+518,577
+</td>
+<td style="text-align:left;font-weight: bold;">
+487,982
+</td>
+<td style="text-align:left;font-weight: bold;">
+466,405
+</td>
+<td style="text-align:left;font-weight: bold;">
+361,158
+</td>
+<td style="text-align:left;font-weight: bold;">
+352,757
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 4em;" indentlevel="1">
+Accumulated Reserve
+</td>
+<td style="text-align:left;">
+568,087
+</td>
+<td style="text-align:left;">
+568,087
+</td>
+<td style="text-align:left;">
+568,087
+</td>
+<td style="text-align:left;">
+568,087
+</td>
+<td style="text-align:left;">
+568,087
+</td>
+<td style="text-align:left;">
+568,087
+</td>
+<td style="text-align:left;">
+568,087
+</td>
+<td style="text-align:left;">
+568,087
+</td>
+<td style="text-align:left;">
+568,087
+</td>
+<td style="text-align:left;">
+568,087
+</td>
+<td style="text-align:left;">
+568,087
+</td>
+<td style="text-align:left;">
+568,087
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 4em;" indentlevel="1">
+Reserve of the Period
+</td>
+<td style="text-align:left;">
+6,716
+</td>
+<td style="text-align:left;">
+-2,653
+</td>
+<td style="text-align:left;">
+-44,687
+</td>
+<td style="text-align:left;">
+-38,834
+</td>
+<td style="text-align:left;">
+-15,652
+</td>
+<td style="text-align:left;">
+-14,811
+</td>
+<td style="text-align:left;">
+-37,386
+</td>
+<td style="text-align:left;">
+-49,510
+</td>
+<td style="text-align:left;">
+-80,105
+</td>
+<td style="text-align:left;">
+-101,682
+</td>
+<td style="text-align:left;">
+-206,929
+</td>
+<td style="text-align:left;">
+-215,330
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Period Profit/Loss Net of FX Reserves
+</td>
+<td style="text-align:left;">
+49,750
+</td>
+<td style="text-align:left;">
+-79,275
+</td>
+<td style="text-align:left;">
+-961,756
+</td>
+<td style="text-align:left;">
+-526,605
+</td>
+<td style="text-align:left;">
+-482,406
+</td>
+<td style="text-align:left;">
+-378,206
+</td>
+<td style="text-align:left;">
+113,368
+</td>
+<td style="text-align:left;">
+364,650
+</td>
+<td style="text-align:left;">
+376,869
+</td>
+<td style="text-align:left;">
+394,508
+</td>
+<td style="text-align:left;">
+1,215,583
+</td>
+<td style="text-align:left;">
+1,679,798
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="section" class="section level2">
+<h2></h2>
+<center>
+<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,UEsDBBQAAAAIAAAAIQA4nYbYPgEAAAcEAAATAAAAW0NvbnRlbnRfVHlwZXNdLnhtbK2Ty27DIBBF9/0KxLYyJF1UVRUniz6WbRbpB1AYxygYEDNJk78vtpNIrdI8lG6MzNy55w6C0WTdOLaChDb4kg/FgDPwOhjr5yX/mL0WD5whKW+UCx5KvgHkk/HNaLaJgCw3eyx5TRQfpURdQ6NQhAg+V6qQGkX5N81lVHqh5iDvBoN7qYMn8FRQ68HHo2eo1NIRe1nn7T5IAoecPfXCllVyFaOzWlGuy5U3vyjFliByZ6fB2ka8zQIuDxLayt+Abd97PplkDbCpSvSmmqySJuhpChFl1ovjLgdihqqyGrLHssktAtpABkwRsyUksrDPfJStQ4LL4bszarvPJK6dRNo4wKtHxZhAGawBqHGiNz1BpnyfoP8Or+Z3NieAXyEtPkNY/Pew7SoaZf0Z/E6Msluun/pnkL3/Lofs3vH4G1BLAwQUAAAACAAAACEA8p9J2ukAAABLAgAACwAAAF9yZWxzLy5yZWxzrZLBTsMwDEDvfEXk+5puSAihpbsgpN0mND7AJG4btY2jxIPu74mQQAyNaQeOceznZ8vrzTyN6o1S9hwMLKsaFAXLzofOwMv+aXEPKgsGhyMHMnCkDJvmZv1MI0qpyb2PWRVIyAZ6kfigdbY9TZgrjhTKT8tpQinP1OmIdsCO9Kqu73T6yYDmhKm2zkDauiWo/THSNWxuW2/pke1hoiBnWvzKKGRMHYmBedTvnIZX5qEqUNDnXVbXu/w9p55I0KGgtpxoEVOpTuLLWr91HNtdCefPjEtCt/+5HJqFgiN3WQlj/DLSJzfQfABQSwMEFAAAAAgAAAAhAOVEG6PVAAAALAIAABoAAAB4bC9fcmVscy93b3JrYm9vay54bWwucmVsc62Rz4oCMQyH7z5FyX0nMwoiYsfLsuBV9AFKJ/MHZ9rSZHedt7couiuIePAUfgn58kFW6+PQqx+K3HmnochyUOSsrzrXaNjvvj4WoFiMq0zvHWkYiWFdTlZb6o2kHW67wCpBHGtoRcISkW1Lg+HMB3JpUvs4GEkxNhiMPZiGcJrnc4z/GVDeMdWm0hA3VQFqNwZ6he3rurP06e33QE4enMBfHw/cEkmCmtiQaLi1GM+lyBIV8LHM9J0yknbpT+QcL82nDrN3OrCMfXroTeKSr+fx7snlCVBLAwQUAAAACAAAACEAfuIczveTAAA9wAYAGAAAAHhsL3dvcmtzaGVldHMvc2hlZXQxLnhtbLS9W7Mdx3Gt+35+BYLPZavr1heHrB3w7PuF5CEoHfsRpiCJYYrUASl7739/qiCAq1evkZPMcWoywg6a8PxQ2dWVnVU1MvO3/+t///W7V//97v2P3/7w/b9+Zv+5+uzVu++/+eGP337/53/97Pdfj//Ufvbqx5/efv/Ht9/98P27f/3s/7z78bP/9bv/67f/88P7//rxL+/e/fQqAb7/8V8/+8tPP/3tX37zmx+/+cu7v7798Z9/+Nu779Of/OmH9399+1P6P9//+Tc//u39u7d//PCjv373G1dV9W/++vbb7z/7B+Ff3v8axg9/+tO337zrf/jm73999/1P/4C8f/fd25/S8H/8y7d/+/Gz3/32j9+mP8v2vHr/7k//+tlr+y9H8OGz3/zutx/+7j98++5/fjz9+6uf3v7nm3ffvfvmp3d/TE/gs1fZtP/84Yf/yn+4pP9U5Z/+5sVvxw/D+vL9qz+++9Pbv3/301c//M/87ts//+WnBIk//23925/e/u6373/4n1fvP8B//PC/v/n7jz/98Nd/EPJ/+N1vv8l//vrn/4f0X7/9/rtvv3/35qf36U+/TX/pT7/7w9v333379j+/e/fb3/yURpT/42+++fjTf7v/0/Xt939/+/7/gB/e7v9wfPef74Vf9vd/ebx9/81fwM+G+z97/bf3334Hfjb+0t+Ghjj9wlP5+/foWc6/9Kvv0N+1/IJdf/9zmnTwu/X+7968+9tP7/76n+/eg59u93/6xTc//YB/uN//4ec//Lf0Vx73f9m/+wb88jfp/f95Ebif33YnPao3b4av36CXXPpFG0ysa2N9jd7wX/hV5xr0dou/cqZx1sS2RS+3+CtvQogmuojebelXjTW+caayAb3c937lK+NbZNd851edbU2s0N+1iL9yxoVgqsqiV1v6Vd2lJ+FNtB16q+/8qvaN8R361S79KramqRrTtMiuQ/xVZ7qmNo2t7rzK/udX2WNM/rT9y49/e/tN+nKmr9+P797/97vPfvfq1e3tj395lT6qr77J//Lu//37t//99rv0QUPvvA4dTd2mSfToNbtpUV3XmdY5tDp0qDQFTTC+hktGQP3OVqbpfFqeFVoyyif+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" download="balance_sheet.xlsx">
+<button class="btn btn-success" has_icon="TRUE"><i class="fa fa-table"></i> Download Excel Balance Sheet</button>
+</a>
+</center>
+<p><br></p>
+<center>
+<a href="https://rafalopezv.io/static/locfund/balance_sheet.pdf">
+<button class="btn btn-danger"><i class="fa fa-file"></i> Doownload PDF Balance Sheet </button>
+</a>
+</center>
+</div>
+<div id="profitloss-usd" class="section level2 tabset tabset-fade tabset-pills">
+<h2 class="tabset tabset-fade tabset-pills">PROFIT/LOSS (USD)</h2>
+<div id="monthly" class="section level3">
+<h3>MONTHLY</h3>
+<div id="htmlwidget-3d0d401bb33674838ed8" class="reactable html-widget" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-3d0d401bb33674838ed8">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"nivel1":["Total Income","Total Expenses","PROFIT / LOSS before provisions","Bad Loans Provisions","PROFIT / LOSS after provisions","Exchange Rate Difference","PROFIT / LOSS after FX"],"January":[631746,-331774,299973,7765,307738,-251271,56466],"February":[592707,-311325,281383,-1501,279882,-418276,-138394],"March":[619029,-332231,286799,26692,313490,-1238006,-924516],"April":[564880,-315660,249221,59598,308819,132186,441005],"May":[562137,-286594,275543,-464808,-189265,256646,67380],"June":[527914,-232770,295145,159155,454299,-349259,105041],"July":[523681,-238818,284863,77732,362595,106404,468999],"August":[498683,-237163,261521,4275,265796,-26637,239159],"September":[457062,-227774,229287,30637,259924,-278301,-18377],"October":[449699,-234403,215296,-312850,-97553,93616,-3937],"November":[399002,-204676,194326,177076,371402,344426,715828],"December":[399171,-179332,219840,30403,250242,205571,455813]},"columns":[{"accessor":".details","name":"","type":"NULL","sortable":false,"resizable":false,"filterable":false,"width":45,"align":"center","details":[{"name":"Reactable","attribs":{"data":{"Total Income":["Loans Interests"],"January":[631746],"February":[592707],"March":[619029],"April":[564880],"May":[562137],"June":[527914],"July":[523681],"August":[498683],"September":[457062],"October":[449699],"November":[399002],"December":[399171]},"columns":[{"accessor":"Total Income","name":"Total Income","type":"character"},{"accessor":"January","name":"Jan","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"February","name":"Feb","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"March","name":"Mar","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"April","name":"Apr","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"May","name":"May","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"June","name":"June","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"July","name":"July","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"August","name":"Aug","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"September","name":"Sept","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"October","name":"Oct","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"November","name":"Nov","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"December","name":"Dec","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90}],"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"bordered":true,"striped":true,"theme":{"borderColor":"#E1E1E4","stripedColor":"#F4F4F5","highlightColor":"#E8E8EA","cellPadding":"8px 12px","style":{"fontFamily":"Helvetica"}},"dataKey":"4f31523d291176668017b559ff309aa5","key":"4f31523d291176668017b559ff309aa5","nested":true},"children":[]},{"name":"Reactable","attribs":{"data":{"Total Expenses":["Advisory Committee Meetings Costs","Bank and Account Charges","Credit Committe Meetings Costs","External Audit and Report Expenses","Insurance - D&O","Legal Expenses","Management Fees","Others","Senior Loans - Closing and Commitment Fees","Senior Loans Interests"],"January":[0,-718,0,-3748,-1182,0,-119116,0,-4817,-202193],"February":[0,-421,0,-3748,-1182,-1900,-106020,0,-3570,-194484],"March":[0,-480,0,-3748,-1182,-2210,-112897,0,-3817,-207897],"April":[0,-399,-750,-3748,-1182,-458,-104343,0,-3693,-201087],"May":[0,-375,0,-3748,-1182,-5764,-105471,0,-3817,-166237],"June":[0,-784,0,-3748,-1182,-101,-99640,0,-3693,-123622],"July":[0,-445,-1500,-3748,-1182,0,-100383,0,-3817,-127743],"August":[0,-330,0,-3748,-1268,0,-98257,-2000,-3817,-127743],"September":[0,-750,-500,-3748,-1268,-1748,-92446,0,-3693,-123621],"October":[0,-385,0,-3748,-1268,-1545,-92397,-3500,-3817,-127743],"November":[-2100,-560,-1500,-3748,-1268,-4214,-86072,0,-3693,-101521],"December":[-2100,-841,0,-3748,-1268,-1500,-86950,0,-739,-82186]},"columns":[{"accessor":"Total Expenses","name":"Total Expenses","type":"character"},{"accessor":"January","name":"Jan","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"February","name":"Feb","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"March","name":"Mar","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"April","name":"Apr","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"May","name":"May","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"June","name":"June","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"July","name":"July","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"August","name":"Aug","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"September","name":"Sept","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"October","name":"Oct","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"November","name":"Nov","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"December","name":"Dec","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90}],"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"bordered":true,"striped":true,"theme":{"borderColor":"#E1E1E4","stripedColor":"#F4F4F5","highlightColor":"#E8E8EA","cellPadding":"8px 12px","style":{"fontFamily":"Helvetica"}},"dataKey":"ac4918283c7e304b334ace26bfa88975","key":"ac4918283c7e304b334ace26bfa88975","nested":true},"children":[]},null,null,null,null,null]},{"accessor":"nivel1","name":"PROFIT/LOSS","type":"character","minWidth":150},{"accessor":"January","name":"Jan","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"February","name":"Feb","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"March","name":"Mar","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"April","name":"Apr","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"May","name":"May","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"June","name":"June","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"July","name":"July","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"August","name":"Aug","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"September","name":"Sept","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"October","name":"Oct","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"November","name":"Nov","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90},{"accessor":"December","name":"Dec","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":90}],"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"bordered":true,"striped":true,"theme":{"borderColor":"#E1E1E4","stripedColor":"#F4F4F5","highlightColor":"#E8E8EA","cellPadding":"8px 12px","style":{"fontFamily":"Helvetica"}},"dataKey":"252c8b01348dcf2d26a350646a486fb1","key":"252c8b01348dcf2d26a350646a486fb1"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="accumulated" class="section level3">
+<h3>ACCUMULATED</h3>
+<div id="htmlwidget-a4378841d4dd99211f1b" class="reactable html-widget" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-a4378841d4dd99211f1b">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"nivel1":["Total Income","Total Expenses","PROFIT / LOSS before provisions","Bad Loans Provisions","PROFIT / LOSS after provisions","Exchange Rate Difference","PROFIT / LOSS after FX"],"January":[631746,-331774,299973,7765,307738,-251271,56466],"February":[1224453,-643099,581356,6264,587620,-669547,-81928],"March":[1843482,-975330,868155,32956,901110,-1907553,-1006444],"April":[2408362,-1290990,1117376,92554,1209929,-1775367,-565439],"May":[2970499,-1577584,1392919,-372254,1020664,-1518721,-498059],"June":[3498413,-1810354,1688064,-213099,1474963,-1867980,-393018],"July":[4022094,-2049172,1972927,-135367,1837558,-1761576,75981],"August":[4520777,-2286335,2234448,-131092,2103354,-1788213,315140],"September":[4977839,-2514109,2463735,-100455,2363278,-2066514,296763],"October":[5427538,-2748512,2679031,-413305,2265725,-1972898,292826],"November":[5826540,-2953188,2873357,-236229,2637127,-1628472,1008654],"December":[6225711,-3132520,3093197,-205826,2887369,-1422901,1464467]},"columns":[{"accessor":".details","name":"","type":"NULL","sortable":false,"resizable":false,"filterable":false,"width":45,"align":"center","details":[{"name":"Reactable","attribs":{"data":{"Total Income":["Loans Interests"],"January":[631746],"February":[1224453],"March":[1843482],"April":[2408362],"May":[2970499],"June":[3498413],"July":[4022094],"August":[4520777],"September":[4977839],"October":[5427538],"November":[5826540],"December":[6225711]},"columns":[{"accessor":"Total Income","name":"Total Income","type":"character"},{"accessor":"January","name":"Jan","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"February","name":"Feb","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"March","name":"Mar","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"April","name":"Apr","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"May","name":"May","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"June","name":"June","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"July","name":"July","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"August","name":"Aug","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"September","name":"Sept","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"October","name":"Oct","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"November","name":"Nov","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"December","name":"Dec","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100}],"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"bordered":true,"striped":true,"theme":{"borderColor":"#E1E1E4","stripedColor":"#F4F4F5","highlightColor":"#E8E8EA","cellPadding":"8px 12px","style":{"fontFamily":"Helvetica"}},"dataKey":"13fbee6debd41bd09a1195d62af6f8a7","key":"13fbee6debd41bd09a1195d62af6f8a7","nested":true},"children":[]},{"name":"Reactable","attribs":{"data":{"Total Expenses":["Advisory Committee Meetings Costs","Bank and Account Charges","Credit Committe Meetings Costs","External Audit and Report Expenses","Insurance - D&O","Legal Expenses","Management Fees","Others","Senior Loans - Closing and Commitment Fees","Senior Loans Interests"],"January":[0,-718,0,-3748,-1182,0,-119116,0,-4817,-202193],"February":[0,-1139,0,-7496,-2364,-1900,-225136,0,-8387,-396677],"March":[0,-1619,0,-11244,-3546,-4110,-338033,0,-12204,-604574],"April":[0,-2018,-750,-14992,-4728,-4568,-442376,0,-15897,-805661],"May":[0,-2393,-750,-18740,-5910,-10332,-547847,0,-19714,-971898],"June":[0,-3177,-750,-22488,-7092,-10433,-647487,0,-23407,-1095520],"July":[0,-3622,-2250,-26236,-8274,-10433,-747870,0,-27224,-1223263],"August":[0,-3952,-2250,-29984,-9542,-10433,-846127,-2000,-31041,-1351006],"September":[0,-4702,-2750,-33732,-10810,-12181,-938573,-2000,-34734,-1474627],"October":[0,-5087,-2750,-37480,-12078,-13726,-1030970,-5500,-38551,-1602370],"November":[-2100,-5647,-4250,-41228,-13346,-17940,-1117042,-5500,-42244,-1703891],"December":[-4200,-6488,-4250,-44976,-14614,-19440,-1203992,-5500,-42983,-1786077]},"columns":[{"accessor":"Total Expenses","name":"Total Expenses","type":"character"},{"accessor":"January","name":"Jan","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"February","name":"Feb","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"March","name":"Mar","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"April","name":"Apr","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"May","name":"May","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"June","name":"June","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"July","name":"July","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"August","name":"Aug","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"September","name":"Sept","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"October","name":"Oct","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"November","name":"Nov","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"December","name":"Dec","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100}],"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"bordered":true,"striped":true,"theme":{"borderColor":"#E1E1E4","stripedColor":"#F4F4F5","highlightColor":"#E8E8EA","cellPadding":"8px 12px","style":{"fontFamily":"Helvetica"}},"dataKey":"e97ae6a6f7634de4a118ba86b96d3c0b","key":"e97ae6a6f7634de4a118ba86b96d3c0b","nested":true},"children":[]},null,null,null,null,null]},{"accessor":"nivel1","name":"PROFIT/LOSS","type":"character","minWidth":150},{"accessor":"January","name":"Jan","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"February","name":"Feb","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"March","name":"Mar","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"April","name":"Apr","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"May","name":"May","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"June","name":"June","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"July","name":"July","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"August","name":"Aug","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"September","name":"Sept","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"October","name":"Oct","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"November","name":"Nov","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100},{"accessor":"December","name":"Dec","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":100}],"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"bordered":true,"striped":true,"theme":{"borderColor":"#E1E1E4","stripedColor":"#F4F4F5","highlightColor":"#E8E8EA","cellPadding":"8px 12px","style":{"fontFamily":"Helvetica"}},"dataKey":"30572a7a5594ab4138ef8bff919d1445","key":"30572a7a5594ab4138ef8bff919d1445"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="section-1" class="section level2">
+<h2></h2>
+<center>
+<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,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" download="profit_loss.xlsx">
+<button class="btn btn-success" has_icon="TRUE"><i class="fa fa-table"></i> Download Excel Monthly Profit/Loss</button>
+</a>
+</center>
+<p><br></p>
+<center>
+<a href="https://rafalopezv.io/static/locfund/profit_loss.pdf">
+<button class="btn btn-danger"><i class="fa fa-file"></i> Doownload PDF Profit/Loss</button>
+</a>
+</center>
+</div>
+<div id="country-analysis" class="section level2">
+<h2>COUNTRY ANALYSIS</h2>
+<div id="htmlwidget-f75b02ab09ab51985663" class="reactable html-widget" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-f75b02ab09ab51985663">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"country":["Argentina","Bolivia","Colombia","Ecuador","El Salvador","Guatemala","Honduras","Mexico","Nicaragua","Panama","Paraguay","Peru","Republica Dominicana"],"principal":[28086,7468935,3134979,15620495,10465775,6986896,7569275,2699896,4111194,4372252,1946393,5067627,1008567],"accrued_interest":[3371,121236,32753,191714,92645,124539,187994,56781,71011,32039,30996,86024,12231],"total":[31456,7590172,3167730,15812209,10558419,7111434,7757272,2756678,4182205,4404291,1977389,5153650,1020798]},"columns":[{"accessor":".details","name":"","type":"NULL","sortable":false,"resizable":false,"filterable":false,"width":45,"align":"center","details":[{"name":"Reactable","attribs":{"data":{"Argentina":["FIE GP","OMLA"],"principal":[22154,5932],"accrued_interest":[2853,518],"total":[25006,6450]},"columns":[{"accessor":"Argentina","name":"Argentina","type":"character"},{"accessor":"principal","name":"Principal","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75},{"accessor":"accrued_interest","name":"Accrued Interests","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75},{"accessor":"total","name":"Total","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75}],"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"bordered":true,"striped":true,"theme":{"borderColor":"#E1E1E4","stripedColor":"#F4F4F5","highlightColor":"#E8E8EA","cellPadding":"8px 12px","style":{"fontFamily":"Helvetica"}},"dataKey":"9c03bb8d5637f067c9c977e7b1ec7f39","key":"9c03bb8d5637f067c9c977e7b1ec7f39","nested":true},"children":[]},{"name":"Reactable","attribs":{"data":{"Bolivia":["DIACONIA","IDEPRO","IMPRO","PRO MUJER - BOL","SARTAWI"],"principal":[1500000,594311,198306,3978118,1198200],"accrued_interest":[19415,3449,1279,84626,12467],"total":[1519416,597760,199584,4062745,1210667]},"columns":[{"accessor":"Bolivia","name":"Bolivia","type":"character"},{"accessor":"principal","name":"Principal","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75},{"accessor":"accrued_interest","name":"Accrued Interests","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75},{"accessor":"total","name":"Total","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75}],"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"bordered":true,"striped":true,"theme":{"borderColor":"#E1E1E4","stripedColor":"#F4F4F5","highlightColor":"#E8E8EA","cellPadding":"8px 12px","style":{"fontFamily":"Helvetica"}},"dataKey":"84bb77bfceb3aecec182121a2c0b8eaa","key":"84bb77bfceb3aecec182121a2c0b8eaa","nested":true},"children":[]},{"name":"Reactable","attribs":{"data":{"Colombia":["CONTACTAR"],"principal":[3134979],"accrued_interest":[32753],"total":[3167730]},"columns":[{"accessor":"Colombia","name":"Colombia","type":"character"},{"accessor":"principal","name":"Principal","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75},{"accessor":"accrued_interest","name":"Accrued Interests","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75},{"accessor":"total","name":"Total","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75}],"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"bordered":true,"striped":true,"theme":{"borderColor":"#E1E1E4","stripedColor":"#F4F4F5","highlightColor":"#E8E8EA","cellPadding":"8px 12px","style":{"fontFamily":"Helvetica"}},"dataKey":"fdfe627d633154942aac3aa11fa89291","key":"fdfe627d633154942aac3aa11fa89291","nested":true},"children":[]},{"name":"Reactable","attribs":{"data":{"Ecuador":["D MIRO","ESPOIR","FACES","INSOTEC"],"principal":[1326384,5901155,3644816,4748140],"accrued_interest":[11647,67802,79716,32549],"total":[1338032,5968958,3724530,4780689]},"columns":[{"accessor":"Ecuador","name":"Ecuador","type":"character"},{"accessor":"principal","name":"Principal","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75},{"accessor":"accrued_interest","name":"Accrued Interests","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75},{"accessor":"total","name":"Total","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75}],"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"bordered":true,"striped":true,"theme":{"borderColor":"#E1E1E4","stripedColor":"#F4F4F5","highlightColor":"#E8E8EA","cellPadding":"8px 12px","style":{"fontFamily":"Helvetica"}},"dataKey":"d98419ae6d2f5e7b1c162e28935419e1","key":"d98419ae6d2f5e7b1c162e28935419e1","nested":true},"children":[]},{"name":"Reactable","attribs":{"data":{"El Salvador":["AMC","APOYO INTEGRAL","ASEI","CREDICAMPO","OPTIMA","PADECOMSMCREDITO"],"principal":[3185643,3037063,824262,677035,1497044,1244728],"accrued_interest":[8041,27104,6793,5210,33833,11664],"total":[3193683,3064166,831055,682246,1530877,1256392]},"columns":[{"accessor":"El Salvador","name":"El Salvador","type":"character"},{"accessor":"principal","name":"Principal","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75},{"accessor":"accrued_interest","name":"Accrued Interests","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75},{"accessor":"total","name":"Total","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75}],"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"bordered":true,"striped":true,"theme":{"borderColor":"#E1E1E4","stripedColor":"#F4F4F5","highlightColor":"#E8E8EA","cellPadding":"8px 12px","style":{"fontFamily":"Helvetica"}},"dataKey":"5eaede019a3a67744103e9fc9b830a6e","key":"5eaede019a3a67744103e9fc9b830a6e","nested":true},"children":[]},{"name":"Reactable","attribs":{"data":{"Guatemala":["ADICLA","ADISA","FAFIDESS","GENESIS"],"principal":[296778,265887,1405079,5019152],"accrued_interest":[5783,6258,18290,94208],"total":[302561,272145,1423369,5113359]},"columns":[{"accessor":"Guatemala","name":"Guatemala","type":"character"},{"accessor":"principal","name":"Principal","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75},{"accessor":"accrued_interest","name":"Accrued Interests","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75},{"accessor":"total","name":"Total","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75}],"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"bordered":true,"striped":true,"theme":{"borderColor":"#E1E1E4","stripedColor":"#F4F4F5","highlightColor":"#E8E8EA","cellPadding":"8px 12px","style":{"fontFamily":"Helvetica"}},"dataKey":"d934e3c0c00d5e649b1469faaf1bb778","key":"d934e3c0c00d5e649b1469faaf1bb778","nested":true},"children":[]},{"name":"Reactable","attribs":{"data":{"Honduras":["AHSETFIN","AMC - HON","BANCO POPULAR","IDH","ODEF","PRISMA"],"principal":[293961,491496,2061341,3191969,1187042,343466],"accrued_interest":[11540,6955,51138,71063,37130,10168],"total":[305501,498451,2112480,3263033,1224172,353635]},"columns":[{"accessor":"Honduras","name":"Honduras","type":"character"},{"accessor":"principal","name":"Principal","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75},{"accessor":"accrued_interest","name":"Accrued Interests","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75},{"accessor":"total","name":"Total","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75}],"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"bordered":true,"striped":true,"theme":{"borderColor":"#E1E1E4","stripedColor":"#F4F4F5","highlightColor":"#E8E8EA","cellPadding":"8px 12px","style":{"fontFamily":"Helvetica"}},"dataKey":"2f469ea08ce069f11a32b563d6b11dde","key":"2f469ea08ce069f11a32b563d6b11dde","nested":true},"children":[]},{"name":"Reactable","attribs":{"data":{"Mexico":["EQUIPATE","MASKAPITAL","SOFIPA","VISION FUND"],"principal":[344963,616945,711062,1026926],"accrued_interest":[5306,8887,20282,22306],"total":[350269,625832,731344,1049233]},"columns":[{"accessor":"Mexico","name":"Mexico","type":"character"},{"accessor":"principal","name":"Principal","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75},{"accessor":"accrued_interest","name":"Accrued Interests","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75},{"accessor":"total","name":"Total","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75}],"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"bordered":true,"striped":true,"theme":{"borderColor":"#E1E1E4","stripedColor":"#F4F4F5","highlightColor":"#E8E8EA","cellPadding":"8px 12px","style":{"fontFamily":"Helvetica"}},"dataKey":"d8ac4d238563c09f99d3b5c828593458","key":"d8ac4d238563c09f99d3b5c828593458","nested":true},"children":[]},{"name":"Reactable","attribs":{"data":{"Nicaragua":["FDL","FINCA","MICREDITO","PRO MUJER - NIC"],"principal":[675448,189477,1115216,2131053],"accrued_interest":[12411,0,13977,44623],"total":[687859,189477,1129193,2175676]},"columns":[{"accessor":"Nicaragua","name":"Nicaragua","type":"character"},{"accessor":"principal","name":"Principal","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75},{"accessor":"accrued_interest","name":"Accrued Interests","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75},{"accessor":"total","name":"Total","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75}],"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"bordered":true,"striped":true,"theme":{"borderColor":"#E1E1E4","stripedColor":"#F4F4F5","highlightColor":"#E8E8EA","cellPadding":"8px 12px","style":{"fontFamily":"Helvetica"}},"dataKey":"8c0dc8ba8369b4d82e1154627f68198d","key":"8c0dc8ba8369b4d82e1154627f68198d","nested":true},"children":[]},{"name":"Reactable","attribs":{"data":{"Panama":["CFE","MICROSERFIN","PROCAJA"],"principal":[2994391,636364,741497],"accrued_interest":[19100,1979,10960],"total":[3013491,638343,752457]},"columns":[{"accessor":"Panama","name":"Panama","type":"character"},{"accessor":"principal","name":"Principal","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75},{"accessor":"accrued_interest","name":"Accrued Interests","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75},{"accessor":"total","name":"Total","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75}],"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"bordered":true,"striped":true,"theme":{"borderColor":"#E1E1E4","stripedColor":"#F4F4F5","highlightColor":"#E8E8EA","cellPadding":"8px 12px","style":{"fontFamily":"Helvetica"}},"dataKey":"c8d13d177ef7525140a2e3a48b1dfb47","key":"c8d13d177ef7525140a2e3a48b1dfb47","nested":true},"children":[]},{"name":"Reactable","attribs":{"data":{"Paraguay":["F. PARAGUAYA"],"principal":[1946393],"accrued_interest":[30996],"total":[1977389]},"columns":[{"accessor":"Paraguay","name":"Paraguay","type":"character"},{"accessor":"principal","name":"Principal","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75},{"accessor":"accrued_interest","name":"Accrued Interests","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75},{"accessor":"total","name":"Total","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75}],"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"bordered":true,"striped":true,"theme":{"borderColor":"#E1E1E4","stripedColor":"#F4F4F5","highlightColor":"#E8E8EA","cellPadding":"8px 12px","style":{"fontFamily":"Helvetica"}},"dataKey":"2ed264eb047fd2e1b3fce3d29444287f","key":"2ed264eb047fd2e1b3fce3d29444287f","nested":true},"children":[]},{"name":"Reactable","attribs":{"data":{"Peru":["ARARIWA","EDAPROSPO","EDPYME ALTERNATIVA"],"principal":[1224646,194883,3648098],"accrued_interest":[23683,1713,60628],"total":[1248329,196596,3708725]},"columns":[{"accessor":"Peru","name":"Peru","type":"character"},{"accessor":"principal","name":"Principal","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75},{"accessor":"accrued_interest","name":"Accrued Interests","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75},{"accessor":"total","name":"Total","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75}],"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"bordered":true,"striped":true,"theme":{"borderColor":"#E1E1E4","stripedColor":"#F4F4F5","highlightColor":"#E8E8EA","cellPadding":"8px 12px","style":{"fontFamily":"Helvetica"}},"dataKey":"045a36006d504a7091815a1e6d55472a","key":"045a36006d504a7091815a1e6d55472a","nested":true},"children":[]},{"name":"Reactable","attribs":{"data":{"Republica Dominicana":["ASPIRE","FDD"],"principal":[505783,502784],"accrued_interest":[9626,2605],"total":[515409,505389]},"columns":[{"accessor":"Republica Dominicana","name":"Republica Dominicana","type":"character"},{"accessor":"principal","name":"Principal","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75},{"accessor":"accrued_interest","name":"Accrued Interests","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75},{"accessor":"total","name":"Total","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75}],"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"bordered":true,"striped":true,"theme":{"borderColor":"#E1E1E4","stripedColor":"#F4F4F5","highlightColor":"#E8E8EA","cellPadding":"8px 12px","style":{"fontFamily":"Helvetica"}},"dataKey":"143683231a8bffdf1add5ea799af61ee","key":"143683231a8bffdf1add5ea799af61ee","nested":true},"children":[]}]},{"accessor":"country","name":"Country","type":"character","minWidth":80},{"accessor":"principal","name":"Principal","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75},{"accessor":"accrued_interest","name":"Accrued Interests","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75},{"accessor":"total","name":"Total","type":"numeric","format":{"cell":{"separators":true},"aggregated":{"separators":true}},"minWidth":75}],"defaultPageSize":15,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"bordered":true,"striped":true,"theme":{"borderColor":"#E1E1E4","stripedColor":"#F4F4F5","highlightColor":"#E8E8EA","cellPadding":"8px 12px","style":{"fontFamily":"Helvetica"}},"dataKey":"59e449830f0a59af1bed8b607265e549","key":"59e449830f0a59af1bed8b607265e549"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+<center>
+<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,UEsDBBQAAAAIAAAAIQA4nYbYPgEAAAcEAAATAAAAW0NvbnRlbnRfVHlwZXNdLnhtbK2Ty27DIBBF9/0KxLYyJF1UVRUniz6WbRbpB1AYxygYEDNJk78vtpNIrdI8lG6MzNy55w6C0WTdOLaChDb4kg/FgDPwOhjr5yX/mL0WD5whKW+UCx5KvgHkk/HNaLaJgCw3eyx5TRQfpURdQ6NQhAg+V6qQGkX5N81lVHqh5iDvBoN7qYMn8FRQ68HHo2eo1NIRe1nn7T5IAoecPfXCllVyFaOzWlGuy5U3vyjFliByZ6fB2ka8zQIuDxLayt+Abd97PplkDbCpSvSmmqySJuhpChFl1ovjLgdihqqyGrLHssktAtpABkwRsyUksrDPfJStQ4LL4bszarvPJK6dRNo4wKtHxZhAGawBqHGiNz1BpnyfoP8Or+Z3NieAXyEtPkNY/Pew7SoaZf0Z/E6Msluun/pnkL3/Lofs3vH4G1BLAwQUAAAACAAAACEA8p9J2ukAAABLAgAACwAAAF9yZWxzLy5yZWxzrZLBTsMwDEDvfEXk+5puSAihpbsgpN0mND7AJG4btY2jxIPu74mQQAyNaQeOceznZ8vrzTyN6o1S9hwMLKsaFAXLzofOwMv+aXEPKgsGhyMHMnCkDJvmZv1MI0qpyb2PWRVIyAZ6kfigdbY9TZgrjhTKT8tpQinP1OmIdsCO9Kqu73T6yYDmhKm2zkDauiWo/THSNWxuW2/pke1hoiBnWvzKKGRMHYmBedTvnIZX5qEqUNDnXVbXu/w9p55I0KGgtpxoEVOpTuLLWr91HNtdCefPjEtCt/+5HJqFgiN3WQlj/DLSJzfQfABQSwMEFAAAAAgAAAAhAOVEG6PVAAAALAIAABoAAAB4bC9fcmVscy93b3JrYm9vay54bWwucmVsc62Rz4oCMQyH7z5FyX0nMwoiYsfLsuBV9AFKJ/MHZ9rSZHedt7couiuIePAUfgn58kFW6+PQqx+K3HmnochyUOSsrzrXaNjvvj4WoFiMq0zvHWkYiWFdTlZb6o2kHW67wCpBHGtoRcISkW1Lg+HMB3JpUvs4GEkxNhiMPZiGcJrnc4z/GVDeMdWm0hA3VQFqNwZ6he3rurP06e33QE4enMBfHw/cEkmCmtiQaLi1GM+lyBIV8LHM9J0yknbpT+QcL82nDrN3OrCMfXroTeKSr+fx7snlCVBLAwQUAAAACAAAACEApkEeHFIVAABvegAAGAAAAHhsL3dvcmtzaGVldHMvc2hlZXQxLnhtbKWdW3MbN7aF38+vYOk9LdwvKdtTjEgmnIkuR5I9k6cpWqJt1kiii6Kcyb8/gAg0mg0sNMUTV6Us7V5t9iIuH2673/3tv48Pox/LzfNq/fT+hDbkZLR8ulvfr56+vj/5eDv7yZyMnreLp/vFw/pp+f7kr+Xzyd8+/M+7P9eb/zx/Wy63I3eDp+f3J9+22+8/n54+331bPi6em/X35ZOLfFlvHhdb9+Pm6+nz981ycf8qenw4ZYSo08fF6ulkd4efN4fcY/3ly+puOVnfvTwun7a7m2yWD4ut+/jP31bfn08+vLtfuZh/ntFm+eX9yZj+PKOUn5x+ePf6b39aLf987vx9tF18vlk+LO+2y3vnwMnIP9rn9fo/Pjh3vyJeepppZ68f62ozul9+Wbw8bK/Xf/62XH39tnU3ke2/NllsFx/ebdZ/jjavN39+/f/dy/N2/bi7g//Fh3d3Pj5uL3C/XT09rJ6WN9uNi67cP7r9cLd+edpu/np3unWfx//q9C4If6kLnVWr7V///rZ+LGjPhrX3i/uCcFIXft+snu5W3xcPBem0Ll3c3W1elvf/Xj1tl5vl87Zwh1n9Dtv1tv8Pn7ovof0mWGs5A3cYb776R39alOxGotl8Ovr1qmRyXTGaz0sG+0/54wNjVPJG6XenP7oWhqCRrFFsPzYLMemqR8NsG9yzgLcW8GMsQKLL89/HJQPeeP2Evz6CtJw2pv/oIUZNQ2nvyXchJYRtrCk/uGgfXIDP9Mv6YfVjVXxsJJnMx2eXF/Piow9pwLcvXh+Fui/fiOwrnoaoZawxpmdCVGpOdCPLLsjWBfl2F5Ck5sKQxrlQtEHuHsaZoKhseO9ZpyGshWUNUz0jQlAQRp0TSpStUK0V6u1WIMl8Mr26viwZ8WbFRIW6IDilWZGf7qJcCJM1ErOo1FraRoMKodvn129/fiSZn4PHrwpAVdChsBtOZCN73/I0RJk2je63hFFppatEDBhgWgPM2w1AEv805x//Pr0e/TT65fL3khUV6U7pdPNPvmp8Krlidq28MJa4mtEv/NNdWAoiaMN5z5eglcI5qhoJ+gjbGmPfbgySHGBMRbpvTNEXG2q9sZTwhtqeL7uwe25XImy/wgStpFYZ172osi+UJGQjb3cGam7G17fjf5aqwNmQZvSpXHVeP6rvDKxxtNyzIgaZUCpvPNooJWo/vm9Gh18Rj52tH9aPn4EbUHR5cTs+ux1fF/04RjV5/aw/PlhX6F1LKmz8r+9LuIzahvZrThsThsAWhSbApAj9qp5AUdWTQRVoXykLnSylDqq06NuxCxsXyypMklquG02BH4k2KSLBqh9QVPVjUIWgg+440jUh3HWcjPcNCZjJuWlIVkCC1kpldbdZ3nckYShFgFh1BIqqjgyqQF9DRehsrLImJ/IYNoI0MjMkBCWT3DYAwmgCUopQseoHFFX9GFSN5v8q+rFDS/dIlDkqlX0/dmHGXRvBbd+PqNXS4YxGhiQspQgZq4ZAUdWQQVW5z6Uqlg8hVNOH9BCl3JLG9hEtSiUxvgVhwI5EqRQhZNUOKKraMahy/W7RDx2+Y4dnbuTRZ7MQtpK6+pK6oaykhLu4xtXVOoYa18SvFCFl1RooqlozqIJIsoNPIaQQDsGyumPCkI6qJmtKotQFacPA2JYmbqUIJauGQFHVkEGVN6TsyA473fhOczfAyVrXXVj5+tEf67dSIzVvOGA0loCVIZCc3r0s7teb4nwX0swvbi5vp2fFGa+3ayZsR5xGUeMaTtrnkBBW0g2Dbd+IVmu4ZQ0FzQhLsMoQQdaMQJrJ6HxeHu9iyU9eggiE0dBkMuXnf3g2/RfiVAndcNE3I6pdB8QpxDLWmQdF7FhzA2puri7nxUrydsmE7QhTM2OkG8mS8F9/GiRcRolQbuDWx9R4E25dW9oInd1k35eEqwwxZM0XqMG+1CVogniHmtzXiLxnnYYwZYpkw+BZq1Vc780q7TuRMJUhdqw5ATXYiboE1hcRprocghaGMCHsYI3ofNY4RBUllsrGgG6FJURliBtrXkAN9qIuAazOZKgwSijd7SSDFXHKlJNG9o2IUkPd2EUjIxKaMsSLNSOgBhtRlwBIZzuytJYrYxvTh7AQ5ppldSMKtXBjXgOGcCwhKUOcWLMBarANdUkZzZkO9CCIYA3JOpJdmFHKHGJmHckuqomk2g1lSAaq+44kEmUID2uOQA12pC4BdM5MmNAghJHG9If3IUyZnwzJqkjUUuZGsxJMALGEoAxxYc0JqMFO1CUIxllgS6uYaxlJ1m7aiBkyqyQ2FA1tlOoq95cZE3nyI8gTa6ARAxII4XwHkMwaLlVj+06EsKCkP4ANEU6YkKYr3DcikSc/gjyhZjY+m94UfXirYsIjUzIiRWMyB2gYqCuZNSOzViuUAywLcIIn4ORHACfUYBOqCoBVnLU+uD4yW3DjLPmg+sOQViuklY1Gi++d1fcjABNqsA9VBYIqvmNEIyVzg3HSnyYPYWakcAOyfvsQxW7U6qoFAQ0lT4DJjwBMqMFOVBUAqXjAR02sZK5qZE7EuKW6kf1OtI0yLVwXLDiwIvElP4IvoQZbUVWUaYLLWCSsYyqV1Y0w8WmotymrHEFshKsfjUCVI+ElPwIvoaYyWTGkAYDJd5xorJKcZ4us0xAWsr/wNgsRSyjZF+4bkQCTHwGYUFMzYkCDMIKHhXZqDRVZxxGCJvehlVkrUMeZoJIfAZVQU3NhQIMZwsQC4UpEoUCYWHkyI0woENL1ObhAJKrkR1Al1NSsGNCMyhUjzEpazYSr6FmB2IUN6/PmLESkAxBhGlQkRIJKcQRUQk3FhyHN6F/lTVyBDa1WRuVjcZGYs7+HK+AmIUpZONMtElQKCJUPo5vFww9oBtKNz8tGvO36idiBIadGKtf59TvHaYgbIkij+xu4WrEfwvMGVAuRqFJAqhxwAe4Dvbr843I0v7id/no9Lm5WOVCKGEvsgFEKZhjvzj0Fe1i0z43dM3uiVhEiIXSLBJsCwuaAPXCP6LA9h0kBeIm4mG50v82chpjxXajO9kCGTaJEacPh1jfR2QwK6XPAGqQ7wJrDpGUQE3EHqJXCmBxJY1wao7M9c7MQZYRSrlUjUPuSkFRAJB3wB+nGN9PiTqeqAICYCHOakguuumAZvIjL8bRUUqJWuiLWMLCCJhKUCgilA04gHXSiJgBTW2JHlkpxyZr+nM00RCXt80crM4rB7YAi8aiAPDrgAdJBD2oCRKMiLK9bqVyn0vdAx7FcVilChFCmVIMKQsJRAXF0wASkgybUBBBGRdjkSTSlrnfow2gIU2JzMJm1WsMoayhqPhOPCsijA14gHfSiJijTqOjuCO1O2QYjdmHLskoRdX7jMZzqlQlGJYTRuglQh0yoCgCKShJdcOPv3IUQZqI/s9fqLOUUu5BIVB5JolB3dj2dzM/G51fFBfYDZAAuZJjQ1EJo0vTndach7I8P5BuoW600mnU3gO27kshUHkmmUDfgyrAM9CCShZHH6wSn6DcbIcwNMdnAbtZqFde8u01w35UEpPJIIIW6y6vb+Xn5AEpdgsoIj6VfE8GznW0hzLkpTADNolhyYrTu7iXe9yNRqDySQqHuajyZnl2e35y/fu+35bIyJEYlpd0USqwolJRIoLLfu0Sho3Nh4Xyo7JxROhI+oe4gW4bECD+kjLMf1g1q+2uq0xCmjPVXklqhpQ7DGJj9kAlF5ZEoCnUH+TIkhkQiVTRG2ZzEpyHs+qesD1JxNCcNgaM5mfhUImz89WWxXT4uHsrn2iBsuiazfK5xQAJWmGRYdLdKa5Nt35qGsPRD12ylLQS5b59pI8CgXyZMlYge615A5pzMb8pWVBWofQ2gqV7HqdlMYQgrJgvrKlGrGfUbSVGpSJAqETvWnUCq2Xg2n0xvimsrgyJ43jFAJ1OEy3x3rGwX5E2j+kturVYzIvB5xwSsCnFk1RCoqhkyKAIFRMVTSJr4Nch+JxPDnOvuGuPOj1ZruORwj5tK6KoQS9b9wCvtFT+GROVpH7XjTiWpZqqRfWYNYaG5zacLW60SjuxcS1rdBKkSuyoEk3Vb8Np7xZYhEWARFaZCCeGENNkZ2bgqT1xDkR0SjVpKuQsbsHVYJWpVCCXrfkDV9GJ6My/b8XbNRMVleSXcYC/fTh7iivoGJuteotoySV33AxuRxKwK4WPdDaiquDGgAb2tCiDqd3vJfJPbNMal8IvWmSFRTbUwlVYk0apC4Fg3BKoqhgxoUCejAoJSyawr8iprVeMeUS0K/W6r1kT5vfZgmKc6B+sRMv62frp/2Syei4bA6c/fbqa3s/lF0ZEhESoj4RSS5dYfDc3qjIqGuYY1W6wLUU6khK1pYlOFkLFqBuTM87PRT6PfLstu1FROM/l4PcaFRAdad4NflZ9xC2FlZWGnR6s1QtLuAcp9UxKkKgSPVVPgef3xxdnl6Ory6uPv5cM6RysnKpyrN65tVfmp+xBW1g1weNbRRK0RGu8dVQlYFaLIqivwsP6gKwcpUQ2Ks6XaGikz+piGuBAe1nVWheLJe8attXDjnE7sqhFQ1ryBovnkt5Ijteu7FahkiA4nkqQ/c6ANOmyu2/nVwuHIeA/lDwBqkt9j351EshrhZdUdJELuVK4fbF503E5qXc/aPUkfbKEByqRqTP/ARtQ6wtGiuzFx345EsBphZdUOJEJ2VK7v2FHker1jUMa0JSbn+hB2YyCRI1vUcuHTAaHVO534VSOqrLqBRMiNyvXJjbIZgVC1VpzmbWwIU05V3s7MotgS7bstVh/l6MSxGtFl1RUkQq5Uru+4Uq4xOxIVkmlD81kjHY9AuYEhy8pI1BrtUyEhNxLEaoSWVTeQCLlRuR7NruqY1clY6rNf9VEtxLnhlGTnJmdR7TwUnMM5Vp3YVR/DrlB0OZnOik7UBLAJjVTqvlRBs+1TUx1POFFOsrMds6hmzLWitEHZoTrpoY4BVyi6up7flFdq3i6Z6DApKrhPZUMzI9qVfWWyhYpZFEuuuMDtZ4JVjejxfPnf1d26aAPcK/C/H+dX49tp0YgjRBNtghWO2nmeuySE5WsqraxfDVpJmDIwNYVOgKoRMVacgJLxzT/GV/Pb8mapA2SIw8JuU059jjjMYbvLGFV5woZZvIf0+WAsWO01CU4N4kbsC5ZUfTlAhpoPE87TM58nsJ/ZZxqi/U0RSLTvRAJRgxix4gSU1J0YlqFManHW1A1NZMOzTGph3lT7fFD9VrTVGqoEyrZoEokaBIkVP5Dk5nLmmoGiF2+WTExY2GfScFdP+gQawtan1sxOPUUtl8yRCWhATQJQg9iwYgKSVEyoS0BzYcKSvpGM2TzbYAhT4l3KNkBEsVVEgXlkk4jTIBis2IAkn+Y388uL0ezjxaToxQE6ZEhYrVfG+sXXfrsZwtqPX0l/pT9qtfJbbAzoUEzCToOIsGIJkgxZcoAONp1hRyllvkPo75mahrAmqhFZXYlSTpTEfUkCUIPQsGIJkgxZcoAOtaFhiV5IaZQrCCBNR7iMCp+xIm9Mw02kVW7sRm197GYSmhqEjBeru8Vm8fWlnLsTqWaTcg9TuR6WlLDUr7T0h0mz5iQesDf5CcpWavxRc4pKSid9KeLFugtIhVyoXI8KR8jb5Ibk1ORMGsJ+QYHlq7hRTP0Z9YajwpCg1CBUrNsAV+znF2fl/qWqKE9tmDDPaazQKt8CE8IZdCHVfrrWxJ8WUWHVAqg6n1f2Aw2rQKmwMTcpfT1fTPsrDDHuT0/lM8atmlkP9gaZklDUIkCsm4JU3US2F/PiYamadid1wvH1+NePMP+1DbtQlRQ+02C/6oQw9+Wiv8V71mqNJQymorQJTi3CxrpDSHWIQxVt5lC5FIW1faaspDpfugtx5poP2c0LFiyKap/QlcFs+Taxq0VUWfcIqQ7xqKLte1S2KFKp8d1qNk1k4zZVmx3QDSHh0xnsKffdSUhrEWfW3YE7UA9wp6LN3ClXsbDCL/yOifxNCyHskL5vTtS5EIX5kW2CW4uIs24O3Id6gDkVbW5O2Z12vlXrwrjQxrNVrD+ZFIWSEsu7wn17EuhauLF08bR4LHsD85XOijNqb7x+YgOuWuuKBsvz48S4IHnVCTsKCCU96f7zJ4i1cN4TPz9MUAqev3I9GP7ZeJhKuz+F5jXsVaW5AXHSlXCyr9w3IPGrhRnxsQFwKtbBx+XN9BrsEzlEhwwJS/zc/+lukAqGBJj1bmU7vFut4YLBzGK2k3gf5sLHllTS55+N/15E2SM0ExsmTIVfcOqDbAjKPuvPokr6iSSUPp10E+wjvMQOVDTYgkERSp5OwskpopiVeTaxGLdZcrWk1I5OusqeG50M+wQSZcWNCoViNwZEMHU6oXFqRPlXS2TpfUPctZhZdt9WqpS0XWnPD9bxA/JjxY8Kc2I/BkQocToJ+OnGMDR/ycI0xmV+JjeGOOHOS/z+BdJJrk8gKu74ovz2MKiaNaOrHR38AVw5RImLSgBPKxR3iCD6bBEv8HkHZZ7yN+m15ganliedXPsE0uJy81I2B57Svx5fz/8JfBkQwbYkzrW6R6b5iLiNU58nOrMjiiXz5QVWn06qfQL5ENoBj+fX7BgQ4RIScuVrrTTJ1iunMU4p5fnhgFkrN8YQ1d3I2nOkk2ufQAiFjsAtpzVHBkSwOQlL+ob7U7zZ9GqMe+ak+Up3K7fC91Uovw4lnWz7BFIpNAQmB5iMXWt5Uz6xepxssvusr42I8SlickfieX/K87nFpFZ+gMvB8J+STo59AikVGgLX8SdXf5xPR+Pfb6fXF+Pb+SdQWP5f+snu078mJRTG1ZPsbQQhzri2hcW9JFfGIS9+6Q3p5N0nECihSTCDwIEmHa6HrW+AVv16QCZ/7UuIU3/cNdsEntTap50gsr5Xk3ZfIgXf7gTdgooD3XqDHjbO8QVRgivll0qz9wbRmBnVde+ZnbOkV/p1uwl8wVT3DVMQS6FTMB3BgU4drkeNdnhnlLDE71gs+BT2uvpy1X/D4SypJfObT9ALUrrvnIJvgrpefn/5/LC6W4wm68fVk/tL+fWe+A7jm6v5dXFuYUgD3QkETKQ2rJvFKroTdh4ov68xHlrLVhZn7X2oFMR2E973fOrgMnxD1OE+QQCeFFdY3yqYUBozWTFtRB/6pjHMFMnfEjpLYukBOXsrxmnnJcXfF1+X54vN19XT8+hh+cV9RtK4Hnmze6fx69+36++vf3M093m93a4f40/flov75cb/5J7uy3q9jT/4Vye374r+8H9QSwMEFAAAAAgAAAAhAIMYaiVIAQAAJgIAAA8AAAB4bC93b3JrYm9vay54bWyNUctOwzAQvPMV1t5pHmojWjWpxEtUQoBEac8m3jRWHTuyHdL+PetUKXDjtDPj3dHOerk6Nop9oXXS6BySSQwMdWmE1PscPjaP1zfAnOdacGU05nBCB6viatkbe/g05sBoXrscau/bRRS5ssaGu4lpUdNLZWzDPVG7j1xrkQtXI/pGRWkcZ1HDpYazw8L+x8NUlSzx3pRdg9qfTSwq7ml7V8vWQbGspMLtORDjbfvCG1r7qIAp7vyDkB5FDlOipsc/gu3a206qQGbxDKLiEvLNMoEV75Tf0GqjO50rnaZpFjpD11Zi736GAmXHndTC9DmkU7rsaWTJDFg/4J0UviYhi+cX7QnlvvY5zLMsDubRL/fhfmNlegj3HnBC/xTqmvYnbBeSgF2LZHAYx0quSkoTytCYTmfJHFjVKXVH2qt+NnwwCENjkuIbUEsDBBQAAAAIAAAAIQA/2O8hsQUAAFMbAAATAAAAeGwvdGhlbWUvdGhlbWUxLnhtbO1ZTY/TRhi+8ytGvoPjxA7ZFVm0ySbQwsJqN1BxnNgTe8jYY81MdsmtgmOlSlVp1Uul3nqo2iKB1Av9NdtStVTiL/T1R5LxZrJkYasWQQ6JZ/y83x9+x7ly9UHM0CERkvKkbTmXahYiic8DmoRt686gf7FlIalwEmDGE9K2pkRaV7cuXMGbKiIxQUCeyE3ctiKl0k3blj5sY3mJpySBeyMuYqxgKUI7EPgI2MbMrtdqTTvGNLFQgmPgens0oj5Bg4yltTVj3mPwlSiZbfhMHPi5RJ0ixwZjJ/uRU9llAh1i1rZATsCPBuSBshDDUsGNtlXLP5a9dcWeEzG1glaj6+efkq4kCMb1nE6Ewzmh03c3Lu/M+dcL/su4Xq/X7TlzfjkA+z5Y6ixh3X7L6cx4aqDicpl3t+bV3Cpe499Ywm90Oh1vo4JvLPDuEr5Va7rb9QreXeC9Zf07291us4L3FvjmEr5/eaPpVvE5KGI0GS+hs3jOIzOHjDi7boS3AN6aJcACZWvZVdAnalWuxfg+F30A5MHFiiZITVMywj7gujgeCoozAXiTYO1OseXLpa1MFpK+oKlqWx+nGCpiAXn1/MdXz5+iV8+fHD98dvzwl+NHj44f/mwgvI6TUCd8+f0Xf3/7Kfrr6XcvH39lxksd//tPn/3265dmoNKBL75+8sezJy+++fzPHx4b4NsCD3X4gMZEolvkCO3zGGwzCCBDcTaKQYRphQJHgDQAeyqqAG9NMTPhOqTqvLsCGoAJeG1yv6LrQSQmihqAN6K4AtzlnHW4MJpzI5OlmzNJQrNwMdFx+xgfmmR3T4S2N0khk6mJZTciFTX3GEQbhyQhCmX3+JgQA9k9Sit+3aW+4JKPFLpHUQdTo0sGdKjMRNdpDHGZmhSEUFd8s3sXdTgzsd8hh1UkFARmJpaEVdx4DU8Ujo0a45jpyJtYRSYlD6bCrzhcKoh0SBhHvYBIaaK5LaYVdW9g6ETGsO+yaVxFCkXHJuRNzLmO3OHjboTj1KgzTSId+5EcQ4pitMeVUQlerZBsDXHAycpw36VEna2s79AwMidIdmciyq5d6b8xTU5rxoxCN/7QjGfwbXg0mUriZAtehXsHG+8OniR7BHL9Q9/90Hffx767qpbX7baLBmvrc3HOL145JI8oYwdqyshNmbdmCUoHfdjMFznRfCZPI7gsxVVwocD5NRJcfUJVdBDhFMQ4uYRQlqxDiVIu4SRgreSdHycpGJ/vebMzIKCx2uVBsd3Qz4ZzNvkqlLqgRsZgXWGNy28nzCmAa0pzPLM071RptuZNqAaEs4O/06wXoiFjMCNB5veCwSws5x4iGeGAlDFyjIY4jTXd1nq91zRpG423k7ZOkHRx7gpx3jlEqbYUJXu5HFlSXaEj0Mqrexbycdq2RjBJwWWcAj+ZNSDMwqRt+ao05bXFfNJgc1o6tZUGV0SkQqodLKOCKr81e3WSLPSve27mh/MxwNCN1tOi0XL+Qy3sk6EloxHx1YqdxbK8xyeKiIMoOEJDNhH7GPR2i+wKqIRnRn22EFChbpl41covq+DkK5qyOjBLI1z2pJYW+wKeX891yFeaevYK3d/QlMY5muK9v6ZkmQtjayPID1QwBgiMshxtW1yoiEMXSiPq9wUMDrks0AtBWWQqIZa9b850JYeLvlXwKJpcGKl9GiJBodOpSBCyp0o7X8PMqevP1xmjss/M1ZVp8Tskh4QNsuptZvZbKJp1k9IROe5k0GxTdQ3D/v948nFXTD6njwcLQe5ZZhFXa/rao2Dj7VQ446O2bra47q39qE3h8IGyL2jcVPhsMd8O+D5EH80nSgSJeLFVlt98cwg6tzTjMlb/7hi1CEFrRbzPc/jUnN1Y4ezTxb25sz2Dr73TXW0vl6itHWTy1dIfT3x4H2TvwEFpwpQs3iY9gKNmd/aXAfCxF6RbF/4BUEsDBBQAAAAIAAAAIQCvzhJdwwEAAFIEAAANAAAAeGwvc3R5bGVzLnhtbL1U34ucMBB+718R8t5zFXrcFfUohYVCWw5uC32NGjUwSSQZF72//iZG3V1oOehDX8zMNzPf/HCS/GnSwM7SeWVNwdO7A2fS1LZRpiv4r9Px4wNnHoVpBFgjCz5Lz5/KD7nHGeRLLyUyYjC+4D3i8DlJfN1LLfydHaQhS2udFkiq6xI/OCkaH4I0JNnhcJ9ooQwv89Ya9Ky2o8GCZytQ5v6VnQVQWSlPyry2YB1Doqc6FsQILaPHVwGqciqArdAK5ghnAVgqWv20MtYFMIkZ4rdK/keu5fAUpABumyWgzAeBKJ05ksJW+TQPlN7Q4CPN4veOd+fEnGafrgKWg/JW1jX0o7fMKd+gMgfZIgU41fXhRDskwYhoNQmNEp01AgLlFrEKRFtLgJewDb/bG+6pZWbUR43fmoLTWoXuN5EKWsVIE5XAf80Wua9os3+iZVO78/8tOn0/molhgPloY39R+wKqM1puLYtNZb116pVcwx7UBMi4CFO7trh3t/R6M7cdZWHlCv4z3CC4qqMaFaAyf5gZcTbTZVyLFUVFF/UmC3E0shUj4Gk3Fvwi/5CNGvXj7vWszhZXr4v8PSxLer9UcHkNyjdQSwMEFAAAAAgAAAAhAEXFyNQkAQAAUAIAABEAAABkb2NQcm9wcy9jb3JlLnhtbJ2SzWrDMBCE730Ko7st2QklCNuBtuTUQKEpLb0JaeOIWj9Iah2/fRUncRLwKcfVzH47u6hc7lWb/IHz0ugK5RlBCWhuhNRNhT42q3SBEh+YFqw1GirUg0fL+qHklnLj4M0ZCy5I8EkEaU+5rdAuBEsx9nwHivksOnQUt8YpFmLpGmwZ/2EN4IKQR6wgMMECwwdgakciOiEFH5H217UDQHAMLSjQweM8y/HFG8ApP9kwKFdOJUNvYdJ6Fkf33svR2HVd1s0Ga8yf46/16/uwair14VQcUF0KTrkDFoyrS3xdxMO1zId1PPFWgnjqoz7xdlrk2AciiQHoMe5Z+Zw9v2xWqC5IkadknhaLDSloQeicfB9G3vRfgOo05G7iGXDMffsJ6n9QSwMEFAAAAAgAAAAhAF66p9N3AQAAEAMAABAAAABkb2NQcm9wcy9hcHAueG1snZLBTuswEEX3fEXkPXVSIfRUOUaogFjwRKUWWBtn0lg4tuUZopavx0nVkAIrsrozc3V9Mra42rU26yCi8a5kxSxnGTjtK+O2JXva3J3/YxmScpWy3kHJ9oDsSp6JVfQBIhnALCU4LFlDFBaco26gVThLY5cmtY+tolTGLfd1bTTceP3egiM+z/NLDjsCV0F1HsZAdkhcdPTX0Mrrng+fN/uQ8qS4DsEarSj9pPxvdPToa8pudxqs4NOhSEFr0O/R0F7mgk9LsdbKwjIFy1pZBMG/GuIeVL+zlTIRpeho0YEmHzM0H2lrc5a9KoQep2SdikY5YgfboRi0DUhRvvj4hg0AoeBjc5BT71SbC1kMhiROjXwESfoUcWPIAj7WKxXpF+JiSjwwsAnjuucrfvAdT/qWvfRtUC4tkI/qwbg3fAobf6MIjus8bYp1oyJU6QbGdY8NcZ+4ou39y0a5LVRHz89Bf/nPhwcui/ksT99w58ee4F9vWX4CUEsBAgAAFAAAAAgAAAAhADidhtg+AQAABwQAABMAAAAAAAAAAQAAAAAAAAAAAFtDb250ZW50X1R5cGVzXS54bWxQSwECAAAUAAAACAAAACEA8p9J2ukAAABLAgAACwAAAAAAAAABAAAAAABvAQAAX3JlbHMvLnJlbHNQSwECAAAUAAAACAAAACEA5UQbo9UAAAAsAgAAGgAAAAAAAAABAAAAAACBAgAAeGwvX3JlbHMvd29ya2Jvb2sueG1sLnJlbHNQSwECAAAUAAAACAAAACEApkEeHFIVAABvegAAGAAAAAAAAAABAAAAAACOAwAAeGwvd29ya3NoZWV0cy9zaGVldDEueG1sUEsBAgAAFAAAAAgAAAAhAIMYaiVIAQAAJgIAAA8AAAAAAAAAAQAAAAAAFhkAAHhsL3dvcmtib29rLnhtbFBLAQIAABQAAAAIAAAAIQA/2O8hsQUAAFMbAAATAAAAAAAAAAEAAAAAAIsaAAB4bC90aGVtZS90aGVtZTEueG1sUEsBAgAAFAAAAAgAAAAhAK/OEl3DAQAAUgQAAA0AAAAAAAAAAQAAAAAAbSAAAHhsL3N0eWxlcy54bWxQSwECAAAUAAAACAAAACEARcXI1CQBAABQAgAAEQAAAAAAAAABAAAAAABbIgAAZG9jUHJvcHMvY29yZS54bWxQSwECAAAUAAAACAAAACEAXrqn03cBAAAQAwAAEAAAAAAAAAABAAAAAACuIwAAZG9jUHJvcHMvYXBwLnhtbFBLBQYAAAAACQAJAD4CAABTJQAAAAA=" download="country_analysis.xlsx">
+<button class="btn btn-success" has_icon="TRUE"><i class="fa fa-table"></i> Download Country Data</button>
+</a>
+</center>
+<!-- # PDF VERSION -->
+<!-- To download a pdf version of the report click on the following button. -->
+<!-- ```{r, include = F} -->
+<!-- rmarkdown::render("pdf_quarterly_report.Rmd", output_format = "pdf_document", params = list( -->
+<!--   year = parms$year, -->
+<!--   month = parms$month, -->
+<!--   debt_commit = parms$debt_commit)) -->
+<!-- ``` -->
+<!-- ```{r} -->
+<!-- download_file( -->
+<!--   path = system.file("pdf_quarterly_report.pdf", package = "downloadthis"), -->
+<!--   output_name = "PDF Quarterly Report", -->
+<!--   button_label = "Download pdf report", -->
+<!--   button_type = "danger", -->
+<!--   has_icon = TRUE, -->
+<!--   icon = "fa fa-save", -->
+<!--   self_contained = FALSE -->
+<!-- ) -->
+<!-- ``` -->
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+
+.intro {
+    text-align: center;
+    font-family: 'Open Sans';
+    font-size: 50px;
+}
+
+.intro2 {
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 45px;
+}
+
+
+.main-container {
+    max-width: 100% !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+ /*------------- Whole Document---------------- */
+ 
+.principal{
+      max-width: 900px !important;
+      margin-left: auto;
+      margin-right: auto;
+      padding-right: 10px;
+      padding-left: 10px;
+      font-family: 'Open Sans';
+      font-size: 16px;
+}
+
+
+ /*----------------- load otf fonts ---------------------*/  
+@font-face {
+  font-family: Nexa;
+  src: url("linea grafica/Font/Nexa-Book.otf") format("opentype");
+
+}
+
+@font-face {
+    font-family: Nexa;
+    font-weight: bold;
+    src: url("linea grafica/Font/Nexa-Book.otf") format("opentype");
+}
+ 
+
+body {
+    font-family: 'Nexa';
+    font-size: 16px;
+  
+}
+
+/*----------------- links ---------------------*/
+
+a { 
+  color: #264653;
+}
+
+ a:hover {
+    color: #264653; /* darker color when hovering */
+  }
+  
+/*----------------- center headings and font font-family ---------------------*/  
+
+title {
+  font-family: 'Poppins';
+  font-size: 60px;
+}
+
+
+h1 {
+  font-family: 'Poppins';
+  font-size: 40px;
+  margin-top:50px;
+  margin-bottom:35px;
+  color: #424242; 
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Poppins';
+  font-size: 25px;
+  margin-top:40px;
+  margin-bottom:20px;
+  color: #424242; 
+  text-align: center;
+}
+
+h3 {
+  font-family: 'Poppins';
+  font-size: 20px;
+  color: #424242; 
+  margin-top: 30px;
+  margin-bottom:20px;
+  text-align: center;
+}
+
+/*----------------- toc ---------------------*/  
+
+/*.list-group-item{
+    background-color: #00C607;*
+    color: #FFFFFF;
+}*/  
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+    background-color: #31313C;
+    color: #FFFFFF;
+}
+
+/*----------------- nav pills ---------------------*/  
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus {
+        color: #FFFFFF;
+        background-color: #31313C;
+}
+
+.nav-pills > li.active > a:hover {
+            background-color: #00C607;
+            color:#FFFFFF;
+}
+
+/*----------------- leaflet ---------------------*/  
+
+.leaflet-container {
+    background: #FFFFFF;
+}
+
+
+.info {
+  box-shadow: 0 0 0; 
+  font-family: 'Open Sans';
+}
+
+.element.style {
+  opacity:1; 
+}
+
+
+.leaflet-tooltip {
+    position: absolute;
+    padding: 6px;
+    background-color: rgba(42, 42, 52, 0.95);
+    border: 0;
+    border-radius: 0;
+    color: #FFFFFF;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 0 0;
+    font-family: 'Open Sans';
+    
+}
+
+.leaflet-control-attribution.leaflet-control {
+  display: none;
+}
+
+/*----------------- highcharter ---------------------*/  
+highcharts-label highcharts-range-input {
+  color: #FFFFFF;
+  background-color:#505059;
+}
+
+/*----------------- downloadthis buttons ---------------------*/  
+.btn-success {
+    color: #FFFFFF;
+    background-color: #006446;
+    border-color: #FFFFFF;
+}
