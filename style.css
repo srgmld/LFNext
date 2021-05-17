@@ -174,3 +174,10 @@ highcharts-label highcharts-range-input {
     background-color: #006446;
     border-color: #FFFFFF;
 }
+
+
+/*-------- pruebas navbar ----- */
+.navar {
+  max-width: 100% !important;
+  
+}
