@@ -126,7 +126,7 @@ h3 {
 /*----------------- leaflet ---------------------*/  
 
 .leaflet-container {
-    background: #FFFFFF;
+    background: #f9a03a;
 }
 
 
@@ -177,7 +177,9 @@ highcharts-label highcharts-range-input {
 
 
 /*-------- pruebas navbar ----- */
-.navar {
-  max-width: 100% !important;
-  
+.navbar-nav {
+  position: absolute;
+  font-family: 'Open Sans';
 }
+
+
