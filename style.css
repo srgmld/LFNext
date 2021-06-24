@@ -125,7 +125,7 @@ h3 {
 
 /*----------------- leaflet ---------------------*/  
 
-.leaflet-container {
+#leaflet-container {
     background: #f9a03a;
 }
 
@@ -176,10 +176,38 @@ highcharts-label highcharts-range-input {
 }
 
 
-/*-------- pruebas navbar ----- */
+/*-------- navbar ----- */
 .navbar-nav {
   position: absolute;
   font-family: 'Open Sans';
+  color: #FF0000;
 }
 
 
+.nuevohr {
+  border-style: none;
+  border-top-style: dotted;
+  border-color: #e1e1e4;
+  border-width: 4px;
+  width: 20%;
+}
+
+.alternativaimg {
+  -webkit-filter: grayscale(100%); 
+  filter: grayscale(100%);
+}
+
+.redondo {
+  border-radius: 10%;
+}
+
+
+.navbar.navbar-inverse ul.nav.navbar-nav>li>a {
+    font-size: 17px;
+}
+
+
+.bg-dark, .navbar.navbar-inverse {
+    background-color: #31313c !important;
+    color: #ffc107;
+}
