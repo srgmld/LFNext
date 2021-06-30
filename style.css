@@ -211,3 +211,33 @@ highcharts-label highcharts-range-input {
     background-color: #31313c !important;
     color: #ffc107;
 }
+
+
+.left {
+  background-color: #fbfbfb;
+  margin: 0px;
+  border-radius: 2%;
+  border-width: .3px;
+  border-color: #e9e9e9;
+  padding: 0;
+  box-shadow: 0px 10px 10px 0px #888888;
+  border-style: solid;
+}
+
+.ancho {
+  width: 60%;
+}
+
+.oscuro {
+  background-color: #31313C;
+  margin: 0px;
+  border-radius: 4%;
+  border-width: .3px;
+  border-color: #42424f;
+  padding: 0;
+  box-shadow: rgba(36, 36, 38, .9) 0 10px 20px;
+  border-style: solid;
+}
+
+
+
